@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<NetworkLink>
+  <name>Transporte Urbano Caracas (Auto-actualizable)</name>
+  <open>1</open>
+  <description>Enlace dinámico al mapa maestro de transporte de Caracas v4. Este archivo se sincroniza automáticamente con el repositorio de GitHub para mostrar siempre la versión más reciente.</description>
+  <Link>
+    <href>https://raw.githubusercontent.com/conrackx/caracas-transit/refs/heads/master/caracas_transporte.kml</href>
+    <refreshMode>onInterval</refreshMode>
+    <refreshInterval>86400</refreshInterval>
+  </Link>
+</NetworkLink>
+</kml>
