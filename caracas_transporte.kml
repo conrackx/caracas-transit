@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"
+     xmlns:gx="http://www.google.com/kml/ext/2.2"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+  <n>Transporte Urbano Caracas — v4 (2025)</n>
+  <description><![CDATA[
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  SISTEMA DE TRANSPORTE URBANO — CARACAS, VENEZUELA           ║
+  ║  Versión 4.0 — Abril 2025                                    ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+  FUENTES DE COORDENADAS:
+  [OSM] = Verificado contra OpenStreetMap vía Wikidata (precisión ~10 m)
+  [~]   = Estimado por interpolación geográfica entre puntos OSM confirmados
+           o por conocimiento de la arteria/ubicación (precisión ±300 m)
+  [DOC] = Posición documental (terminal/nodo sin coordenada OSM disponible)
+
+  FUENTES DOCUMENTALES:
+  • Metro: es.wikipedia.org/wiki/Metro_de_Caracas (abril 2025)
+  • Estaciones: en.wikipedia.org/wiki/List_of_Caracas_Metro_stations
+  • Wikidata station pages (coord stated_in: OpenStreetMap)
+  • L1 oficial color #FF7400: Wikidata Q1363954
+  • BusCaracas: es.wikipedia.org/wiki/BusCaracas
+  • Busetas: TalCual Digital (feb. 2023)
+  • Horarios L1: Moovit Caracas L1 (moovitapp.com, 2025)
+  • Metro Los Teques: es.wikipedia.org/wiki/Metro_de_Los_Teques
+  • Ferrocarril Valles del Tuy: es.wikipedia.org/wiki/Tren_de_los_Valles_del_Tuy
+
+  ESTRUCTURA DE CAPAS (visibilidad por defecto):
+  ✅ Visible: Metro L1-L4, Metrocable, Cabletrén, BusCaracas, Terminales
+  ☐ Oculto:  Metrobús, TransChacao, Líneas Privadas, Metro Los Teques,
+             Ferrocarril (activar en "Lugares" o panel de capas)
+
+  SENTIDOS DE CIRCULACIÓN (busetas):
+  Las rutas de busetas en Caracas frecuentemente usan avenidas distintas
+  para ida y vuelta. Donde está documentado, se indica en la descripción.
+  ]]></description>
+
+  <atom:link href="https://raw.githubusercontent.com/tu-usuario/caracas-transit/main/caracas_transporte_v4_final.kml"/>
+
+  <!-- ══════════════════════════════════════════════
+       PALETA DE ESTILOS — COLORES OFICIALES
+       Formato KML: AABBGGRR (alpha, blue, green, red)
+       L1 #FF7400 = FF0074FF
+       L2 #F5A800 = FF00A8F5
+       L3 #0060AF = FFAF6000
+       L4 #007F3F = FF3F7F00
+  ══════════════════════════════════════════════ -->
+
+  <!-- Línea 1 — Naranja oficial #FF7400 -->
+  <StyleMap id="l1"><Pair><key>normal</key><styleUrl>#l1_n</styleUrl></Pair><Pair><key>highlight</key><styleUrl>#l1_h</styleUrl></Pair></StyleMap>
+  <Style id="l1_n"><LineStyle><color>FF0074FF</color><width>5</width></LineStyle></Style>
+  <Style id="l1_h"><LineStyle><color>FF0074FF</color><width>7</width></LineStyle></Style>
+  <Style id="l1_term"><IconStyle><color>FF0074FF</color><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
+  <Style id="l1_stop"><IconStyle><color>FF0074FF</color><scale>0.6</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.55</scale></LabelStyle></Style>
+  <Style id="l1_xfer"><IconStyle><color>FFFFFFFF</color><scale>0.85</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.7</scale></LabelStyle></Style>
+
+  <!-- Línea 2 — Amarillo #F5A800 -->
+  <Style id="l2_line"><LineStyle><color>FF00A8F5</color><width>5</width></LineStyle></Style>
+  <Style id="l2_term"><IconStyle><color>FF00A8F5</color><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
+  <Style id="l2_stop"><IconStyle><color>FF00A8F5</color><scale>0.6</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.55</scale></LabelStyle></Style>
+
+  <!-- Línea 3 — Azul #0060AF -->
+  <Style id="l3_line"><LineStyle><color>FFAF6000</color><width>5</width></LineStyle></Style>
+  <Style id="l3_term"><IconStyle><color>FFAF6000</color><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
+  <Style id="l3_stop"><IconStyle><color>FFAF6000</color><scale>0.6</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.55</scale></LabelStyle></Style>
+
+  <!-- Línea 4 — Verde #007F3F -->
+  <Style id="l4_line"><LineStyle><color>FF3F7F00</color><width>5</width></LineStyle></Style>
+  <Style id="l4_term"><IconStyle><color>FF3F7F00</color><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
+  <Style id="l4_stop"><IconStyle><color>FF3F7F00</color><scale>0.6</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.55</scale></LabelStyle></Style>
+
+  <!-- L5 Morado (parcial) -->
+  <Style id="l5_stop"><IconStyle><color>FFAA00AA</color><scale>0.8</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.7</scale></LabelStyle></Style>
+
+  <!-- Metro Los Teques — Gris azulado -->
+  <Style id="teques_line"><LineStyle><color>FF886644</color><width>4</width></LineStyle></Style>
+  <Style id="teques_stop"><IconStyle><color>FF886644</color><scale>0.65</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.6</scale></LabelStyle></Style>
+
+  <!-- Ferrocarril Valles del Tuy — Marrón -->
+  <Style id="ffe_line"><LineStyle><color>FF2244AA</color><width>4</width></LineStyle></Style>
+  <Style id="ffe_stop"><IconStyle><color>FF2244AA</color><scale>0.7</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
+
+  <!-- Metrocable — Violeta -->
+  <Style id="cable_line"><LineStyle><color>FF9B0D79</color><width>4</width></LineStyle></Style>
+  <Style id="cable_stop"><IconStyle><color>FF9B0D79</color><scale>0.7</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
+
+  <!-- Cabletrén — Verde lima -->
+  <Style id="ct_line"><LineStyle><color>FF00CD32</color><width>4</width></LineStyle></Style>
+  <Style id="ct_stop"><IconStyle><color>FF00CD32</color><scale>0.65</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href></Icon></IconStyle><LabelStyle><scale>0.6</scale></LabelStyle></Style>
+
+  <!-- BusCaracas L7 — Rojo oscuro -->
+  <Style id="brt_line"><LineStyle><color>FF2222CC</color><width>4</width></LineStyle></Style>
+  <Style id="brt_stop"><IconStyle><color>FF2222CC</color><scale>0.7</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/bus.png</href></Icon></IconStyle><LabelStyle><scale>0.6</scale></LabelStyle></Style>
+
+  <!-- Metrobús — Naranja claro -->
+  <Style id="mb_term"><IconStyle><color>FF0066CC</color><scale>0.8</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/bus.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
+
+  <!-- TransChacao — Turquesa -->
+  <Style id="tc_term"><IconStyle><color>FFAAAA00</color><scale>0.75</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/bus.png</href></Icon></IconStyle><LabelStyle><scale>0.6</scale></LabelStyle></Style>
+
+  <!-- Busetas privadas — líneas con trayecto -->
+  <Style id="priv_petare_line"><LineStyle><color>FFFF7400</color><width>3</width></LineStyle></Style>
+  <Style id="priv_exp_line"><LineStyle><color>FFFF2200</color><width>3</width></LineStyle></Style>
+  <Style id="priv_uco_line"><LineStyle><color>FF00AAFF</color><width>3</width></LineStyle></Style>
+  <Style id="priv_caciques_line"><LineStyle><color>FF9900CC</color><width>3</width></LineStyle></Style>
+  <Style id="priv_casalta_line"><LineStyle><color>FF0066FF</color><width>3</width></LineStyle></Style>
+
+  <!-- Terminales y nodos — solo puntos -->
+  <Style id="priv_term"><IconStyle><color>FFFF7400</color><scale>0.85</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/bus.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
+  <Style id="hub_mayor"><IconStyle><scale>1.2</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href></Icon></IconStyle><LabelStyle><scale>0.85</scale></LabelStyle></Style>
+  <Style id="hub_menor"><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-stars.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 1 — METRO DE CARACAS (L1–L4)
+       Horario L1: 05:10–22:58 (Moovit, 2025)
+       Horario general: 5:30–23:00 (Wikipedia)
+       Tarjeta SUVE desde septiembre 2024
+       Operador: C.A. Metro de Caracas
+  ══════════════════════════════════════════════════════════ -->
+  <Folder>
+    <n>Metro de Caracas</n>
+    <visibility>1</visibility>
+    <description>5 líneas · 51 estaciones operativas · 106.5 km · Inaugurado 2 ene 1983 · Horario: 5:30–23:00 todos los días · Tarjeta SUVE desde sept. 2024</description>
+
+    <!-- ─── L1: Propatria ↔ Palo Verde ─── -->
+    <Folder>
+      <n>L1 — Propatria ↔ Palo Verde [Naranja]</n>
+      <visibility>1</visibility>
+      <description>22 estaciones · 20.4 km · Inaugurada 2 ene 1983 · ~1,200,000 pasajeros/día · Color oficial #FF7400 (Wikidata Q1363954) · 7 coord verificadas [OSM], 15 estimadas [~]</description>
+      <Placemark>
+        <n>L1 Trayecto [OSM+~]</n>
+        <styleUrl>#l1</styleUrl>
+        <LineString><tessellate>1</tessellate><coordinates>
+          -66.955959,10.504739,0
+          -66.951203,10.509639,0
+          -66.946448,10.514539,0
+          -66.936000,10.513000,0
+          -66.924000,10.510000,0
+          -66.914000,10.506000,0
+          -66.903000,10.501000,0
+          -66.895000,10.498500,0
+          -66.890000,10.498000,0
+          -66.886000,10.497000,0
+          -66.883000,10.496500,0
+          -66.881407,10.495804,0
+          -66.876207,10.493839,0
+          -66.865000,10.492500,0
+          -66.854536,10.493031,0
+          -66.845000,10.492000,0
+          -66.834000,10.490000,0
+          -66.823000,10.487000,0
+          -66.817000,10.484000,0
+          -66.812000,10.482000,0
+          -66.807223,10.478710,0
+          -66.798835,10.478519,0
+        </coordinates></LineString>
+      </Placemark>
+      <Placemark><n>L1·01 Propatria [TERMINAL][OSM]</n><styleUrl>#l1_term</styleUrl><description>Inaugurada: 2 ene 1983 · Terminal oeste · Patio de maniobras · Estado: Operativa</description><Point><coordinates>-66.955959,10.504739,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·02 Pérez Bonalde [~]</n><styleUrl>#l1_stop</styleUrl><description>Ubicada en el Bulevar de Catia · Inaugurada: 2 ene 1983</description><Point><coordinates>-66.951203,10.509639,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·03 Plaza Sucre [OSM]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 2 ene 1983 · Bulevar de Catia · Coord: Wikidata Q11335400</description><Point><coordinates>-66.946448,10.514539,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·04 Gato Negro [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 2 ene 1983 · Parroquia San Juan</description><Point><coordinates>-66.936000,10.513000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·05 Agua Salud [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 2 ene 1983 · Incidentes feb–may 2024 (personas en vías)</description><Point><coordinates>-66.924000,10.510000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·06 Caño Amarillo [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 2 ene 1983 · Parroquia San Bernardino</description><Point><coordinates>-66.914000,10.506000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·07 Capitolio [TRANSBORDO L2][~]</n><styleUrl>#l1_xfer</styleUrl><description>Inaugurada: 2 ene 1983 · Transbordo a L2 via El Silencio (caminata) · Adyacente a El Silencio (L2)</description><Point><coordinates>-66.903000,10.501000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·08 La Hoyada [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 2 ene 1983 · Conexión con BusCaracas (L7) en superficie</description><Point><coordinates>-66.895000,10.498500,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·09 Parque Carabobo [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 27 mar 1983</description><Point><coordinates>-66.890000,10.498000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·10 Bellas Artes [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 27 mar 1983 · Adyacente al Teatro Teresa Carreño y Museo de Bellas Artes</description><Point><coordinates>-66.886000,10.497000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·11 Colegio de Ingenieros [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 27 mar 1983</description><Point><coordinates>-66.883000,10.496500,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·12 Plaza Venezuela [TRANSBORDO L3 L4][OSM]</n><styleUrl>#l1_xfer</styleUrl><description>Inaugurada: 27 mar 1983 · Nodo central de todo el sistema · Transbordo directo a L3 y L4 (vía Zona Rental) · Terminal Plaza Venezuela (28 líneas urbanas, inaugurado jul 2025) · Coord: Wikidata Q5147237</description><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·13 Sabana Grande [OSM]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 27 mar 1983 · Adyacente al Bulevar de Sabana Grande (peatonal) · Coord: Wikidata Q6519134</description><Point><coordinates>-66.876207,10.493839,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·14 Chacaíto [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 27 mar 1983 · Nodo de transferencia de múltiples rutas privadas</description><Point><coordinates>-66.865000,10.492500,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·15 Chacao [OSM]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 23 abr 1988 · Municipio Chacao · Coord: Wikidata Q11318084</description><Point><coordinates>-66.854536,10.493031,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·16 Altamira [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 23 abr 1988 · Plaza Francia de Altamira · Av. Francisco de Miranda con Av. San Juan Bosco</description><Point><coordinates>-66.845000,10.492000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·17 Miranda [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 23 abr 1988 · Antes llamada Parque del Este · Futura conexión L5</description><Point><coordinates>-66.834000,10.490000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·18 Los Dos Caminos [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 23 abr 1988 · Descarrilamiento 17 ago 2019 (8 heridos)</description><Point><coordinates>-66.823000,10.487000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·19 Los Cortijos [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 10 nov 1989</description><Point><coordinates>-66.817000,10.484000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·20 La California [~]</n><styleUrl>#l1_stop</styleUrl><description>Inaugurada: 19 nov 1989</description><Point><coordinates>-66.812000,10.482000,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·21 Petare [TRANSBORDO Cabletrén][OSM]</n><styleUrl>#l1_xfer</styleUrl><description>Inaugurada: 19 oct 1989 · Conexión con Cabletrén (sube al barrio Petare) · Coord: Wikidata Q6073300</description><Point><coordinates>-66.807223,10.478710,0</coordinates></Point></Placemark>
+      <Placemark><n>L1·22 Palo Verde [TERMINAL][TRANSBORDO MC2][OSM]</n><styleUrl>#l1_term</styleUrl><description>Inaugurada: 10 nov 1989 · Terminal este L1 · Conexión Metrocable MC2 (Mariche) · Coord: Wikidata Q9054862</description><Point><coordinates>-66.798835,10.478519,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- ─── L2: El Silencio ↔ Las Adjuntas / Zoológico ─── -->
+    <Folder>
+      <n>L2 — El Silencio ↔ Las Adjuntas [Amarillo]</n>
+      <visibility>1</visibility>
+      <description>13 estaciones · 38.4 km · Inaugurada 1987–2006 · ~250,000 pasajeros/día · NOTA: los trenes con destino Zoológico hacen corta vuelta en esa estación (servicio de 11 estaciones); no es una bifurcación física. · Todas las coordenadas son estimadas [~] salvo El Silencio.</description>
+      <Placemark>
+        <n>L2 Trayecto [~]</n>
+        <styleUrl>#l2_line</styleUrl>
+        <LineString><tessellate>1</tessellate><coordinates>
+          -66.900000,10.499000,0
+          -66.907000,10.494000,0
+          -66.913000,10.487000,0
+          -66.921000,10.480000,0
+          -66.930000,10.473000,0
+          -66.937000,10.467000,0
+          -66.943000,10.460000,0
+          -66.950000,10.450000,0
+          -66.956000,10.437000,0
+          -66.959000,10.425000,0
+          -66.961000,10.413000,0
+          -66.970000,10.403000,0
+          -66.981000,10.395000,0
+        </coordinates></LineString>
+      </Placemark>
+      <Placemark><n>L2·01 El Silencio [TERMINAL][TRANSBORDO L1][~]</n><styleUrl>#l2_term</styleUrl><description>Terminal NE · Transbordo a L1 (estación Capitolio, adyacente)</description><Point><coordinates>-66.900000,10.499000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·02 Capuchinos [TRANSBORDO L4][~]</n><styleUrl>#l2_stop</styleUrl><description>Inaugurada: 6 nov 1988 · Transbordo a L4</description><Point><coordinates>-66.907000,10.494000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·03 Maternidad [~]</n><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.913000,10.487000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·04 Artigas [~]</n><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.921000,10.480000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·05 La Paz [~]</n><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.930000,10.473000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·06 La Yaguara [~]</n><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.937000,10.467000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·07 Carapita [~]</n><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.943000,10.460000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·08 Antímano [~]</n><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.950000,10.450000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·09 Mamera [~]</n><styleUrl>#l2_stop</styleUrl><description>Descarrilamientos: 10 dic 2020, may 2022</description><Point><coordinates>-66.956000,10.437000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·10 Caricuao [~]</n><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.959000,10.425000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·11 Zoológico [corta vuelta][~]</n><styleUrl>#l2_stop</styleUrl><description>Punto de corta vuelta para el servicio Zoológico–El Silencio (11 est.). Los trenes continuación siguen a Las Adjuntas.</description><Point><coordinates>-66.961000,10.413000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·12 Ruiz Pineda [~]</n><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.970000,10.403000,0</coordinates></Point></Placemark>
+      <Placemark><n>L2·13 Las Adjuntas [TERMINAL][TRANSBORDO Metro Los Teques][~]</n><styleUrl>#l2_term</styleUrl><description>Terminal SW · Transbordo a Metro de Los Teques (inaugurado 3 nov 2006)</description><Point><coordinates>-66.981000,10.395000,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- ─── L3: Plaza Venezuela ↔ La Rinconada ─── -->
+    <Folder>
+      <n>L3 — Plaza Venezuela ↔ La Rinconada [Azul]</n>
+      <visibility>1</visibility>
+      <description>9 estaciones · 10.4 km · Inaugurada 1994–2010 · ~120,000 pasajeros/día · 8 coordenadas verificadas [OSM] (Wikidata)</description>
+      <Placemark>
+        <n>L3 Trayecto [OSM+~]</n>
+        <styleUrl>#l3_line</styleUrl>
+        <LineString><tessellate>1</tessellate><coordinates>
+          -66.881407,10.495804,0
+          -66.889163,10.488064,0
+          -66.895170,10.483779,0
+          -66.902000,10.476000,0
+          -66.905120,10.468170,0
+          -66.916530,10.458957,0
+          -66.923477,10.447824,0
+          -66.926071,10.440453,0
+          -66.936409,10.434658,0
+        </coordinates></LineString>
+      </Placemark>
+      <Placemark><n>L3·01 Plaza Venezuela [TRANSBORDO L1 L4][OSM]</n><styleUrl>#l3_stop</styleUrl><description>Nodo central. Transbordo directo a L1 y L4 (vía Zona Rental) · Coord: Wikidata Q5147237</description><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+      <Placemark><n>L3·02 Ciudad Universitaria [OSM]</n><styleUrl>#l3_stop</styleUrl><description>Inaugurada: 18 dic 1994 · Campus UCV (Patrimonio Mundial UNESCO) · Coord: Wikidata Q5770721</description><Point><coordinates>-66.889163,10.488064,0</coordinates></Point></Placemark>
+      <Placemark><n>L3·03 Los Símbolos [OSM]</n><styleUrl>#l3_stop</styleUrl><description>Inaugurada: 18 dic 1994 · Coord: Wikidata Q5980417</description><Point><coordinates>-66.895170,10.483779,0</coordinates></Point></Placemark>
+      <Placemark><n>L3·04 La Bandera [~]</n><styleUrl>#l3_stop</styleUrl><description>Inaugurada: 18 dic 1994 · Cercana al Terminal La Bandera (Occidente)</description><Point><coordinates>-66.902000,10.476000,0</coordinates></Point></Placemark>
+      <Placemark><n>L3·05 El Valle [OSM]</n><styleUrl>#l3_stop</styleUrl><description>Inaugurada: 18 dic 1994 · Coord: Wikidata Q5801828</description><Point><coordinates>-66.905120,10.468170,0</coordinates></Point></Placemark>
+      <Placemark><n>L3·06 Los Jardines [OSM]</n><styleUrl>#l3_stop</styleUrl><description>Inaugurada: 10 ene 2007 · Coord: Wikidata Q5979856</description><Point><coordinates>-66.916530,10.458957,0</coordinates></Point></Placemark>
+      <Placemark><n>L3·07 Coche [OSM]</n><styleUrl>#l3_stop</styleUrl><description>Inaugurada: 10 ene 2010 · Coord: Wikidata Q5775839</description><Point><coordinates>-66.923477,10.447824,0</coordinates></Point></Placemark>
+      <Placemark><n>L3·08 Mercado [OSM]</n><styleUrl>#l3_stop</styleUrl><description>Inaugurada: 10 ene 2010 · Coord: Wikidata Q6010420</description><Point><coordinates>-66.926071,10.440453,0</coordinates></Point></Placemark>
+      <Placemark><n>L3·09 La Rinconada [TERMINAL][TRANSBORDO Ferrocarril][OSM]</n><styleUrl>#l3_term</styleUrl><description>Inaugurada: 15 oct 2006 · Terminal sur L3 · Conexión Sistema Ferroviario Central (Tren Valles del Tuy: Charallave–Cúa) · Coord: Wikidata Q5965109</description><Point><coordinates>-66.936409,10.434658,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- ─── L4: Zona Rental ↔ Capuchinos ─── -->
+    <Folder>
+      <n>L4 — Zona Rental ↔ Capuchinos [Verde]</n>
+      <visibility>1</visibility>
+      <description>5 estaciones · 5.5 km · Inaugurada 18 jul 2006 · Extensión de L2. Zona Rental = estación distinta a Plaza Venezuela (250 m entre ambas). Conecta con Metrocable MC1 en Parque Central. · Coord Zona Rental verificada [OSM]; resto estimado [~].</description>
+      <Placemark>
+        <n>L4 Trayecto [OSM+~]</n>
+        <styleUrl>#l4_line</styleUrl>
+        <LineString><tessellate>1</tessellate><coordinates>
+          -66.882946,10.495107,0
+          -66.892000,10.497000,0
+          -66.900000,10.498500,0
+          -66.905000,10.496000,0
+          -66.907000,10.494000,0
+        </coordinates></LineString>
+      </Placemark>
+      <Placemark><n>L4·01 Zona Rental [TERMINAL][TRANSBORDO L1 L3][OSM]</n><styleUrl>#l4_term</styleUrl><description>Terminal este L4 · Inaug: 18 jul 2006 · Transbordo a L1 y L3 · Coord: Wikidata Q6171599</description><Point><coordinates>-66.882946,10.495107,0</coordinates></Point></Placemark>
+      <Placemark><n>L4·02 Parque Central [TRANSBORDO MC1][~]</n><styleUrl>#l4_stop</styleUrl><description>Inaug: 18 jul 2006 · Conexión con Metrocable MC1 (San Agustín del Sur)</description><Point><coordinates>-66.892000,10.497000,0</coordinates></Point></Placemark>
+      <Placemark><n>L4·03 Nuevo Circo [~]</n><styleUrl>#l4_stop</styleUrl><description>Inaug: 18 jul 2006</description><Point><coordinates>-66.900000,10.498500,0</coordinates></Point></Placemark>
+      <Placemark><n>L4·04 Teatros [~]</n><styleUrl>#l4_stop</styleUrl><description>Inaug: 18 jul 2006</description><Point><coordinates>-66.905000,10.496000,0</coordinates></Point></Placemark>
+      <Placemark><n>L4·05 Capuchinos [TERMINAL][TRANSBORDO L2][~]</n><styleUrl>#l4_term</styleUrl><description>Terminal oeste L4 · Transbordo a L2 · Los trenes en servicio L4 continúan sobre el mismo tramo físico que L2 hasta Las Adjuntas/Zoológico</description><Point><coordinates>-66.907000,10.494000,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- ─── L5: Solo Bello Monte (parcial) ─── -->
+    <Folder>
+      <n>L5 — Bello Monte [Morada] (1 estación operativa)</n>
+      <visibility>1</visibility>
+      <description>1 estación operativa (inaugurada 4 nov 2015) · Proyecto planificado E→W: Bello Monte→Las Mercedes→Tamanaco→Chuao→Bello Campo→Miranda (L1) · Todas las demás estaciones en construcción.</description>
+      <Placemark><n>L5·01 Bello Monte [ÚNICA ESTACIÓN OPERATIVA 2015][~]</n><styleUrl>#l5_stop</styleUrl><description>Inaugurada: 4 nov 2015 · Extensión hacia el este en construcción · Conecta con L4 en Zona Rental</description><Point><coordinates>-66.864000,10.490800,0</coordinates></Point></Placemark>
+    </Folder>
+  </Folder>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 2 — METRO DE LOS TEQUES
+       Conecta con L2 en Las Adjuntas.
+       Inaugurado parcialmente 3 nov 2006.
+       Operador: C.A. Metro de Los Teques
+  ══════════════════════════════════════════════════════════ -->
+  <Folder>
+    <n>Metro de Los Teques</n>
+    <visibility>0</visibility>
+    <description>[OCULTO POR DEFECTO — activar en panel de capas] · 4 estaciones operativas · Conecta Las Adjuntas (Caracas) con Los Teques (cap. edo. Miranda) · Inaugurado parcialmente 3 nov 2006 · Operador: C.A. Metro de Los Teques · Todas las coordenadas son estimadas [~]</description>
+    <Placemark>
+      <n>Metro Los Teques Trayecto [~]</n>
+      <styleUrl>#teques_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.981000,10.395000,0
+        -67.003000,10.370000,0
+        -67.012000,10.355000,0
+        -67.021000,10.343000,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><n>MLT·01 Las Adjuntas [TRANSBORDO L2][~]</n><styleUrl>#teques_stop</styleUrl><description>Estación compartida con L2 del Metro de Caracas</description><Point><coordinates>-66.981000,10.395000,0</coordinates></Point></Placemark>
+    <Placemark><n>MLT·02 Alí Primera (antes: El Tambor) [~]</n><styleUrl>#teques_stop</styleUrl><description>Inaugurada: 3 nov 2006 · Primera extensión sin paradas intermedias desde Las Adjuntas</description><Point><coordinates>-67.003000,10.370000,0</coordinates></Point></Placemark>
+    <Placemark><n>MLT·03 Guaicaipuro [~]</n><styleUrl>#teques_stop</styleUrl><Point><coordinates>-67.012000,10.355000,0</coordinates></Point></Placemark>
+    <Placemark><n>MLT·04 Independencia [TERMINAL][~]</n><styleUrl>#teques_stop</styleUrl><description>Terminal Los Teques · Ciudad de Los Teques, capital del estado Miranda</description><Point><coordinates>-67.021000,10.343000,0</coordinates></Point></Placemark>
+  </Folder>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 3 — FERROCARRIL VALLES DEL TUY (IFE)
+       La Rinconada → Charallave → Cúa
+       Conecta con Metro L3 en La Rinconada.
+  ══════════════════════════════════════════════════════════ -->
+  <Folder>
+    <n>Ferrocarril Valles del Tuy (IFE)</n>
+    <visibility>0</visibility>
+    <description>[OCULTO POR DEFECTO — activar en panel de capas] · Sistema Ferroviario Central · Tramo: La Rinconada (Caracas) → Charallave → Cúa (estado Miranda) · Conecta con Metro L3 en La Rinconada · Operador: Instituto de Ferrocarriles del Estado (IFE) · Coordenadas estimadas [~]</description>
+    <Placemark>
+      <n>Ferrocarril Trayecto La Rinconada–Cúa [~]</n>
+      <styleUrl>#ffe_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.936409,10.434658,0
+        -66.910000,10.340000,0
+        -66.892000,10.264000,0
+        -66.876000,10.159000,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><n>FFE La Rinconada [TRANSBORDO L3][OSM]</n><styleUrl>#ffe_stop</styleUrl><description>Estación compartida con Metro L3 · Coord: Wikidata Q5965109</description><Point><coordinates>-66.936409,10.434658,0</coordinates></Point></Placemark>
+    <Placemark><n>FFE Charallave [~]</n><styleUrl>#ffe_stop</styleUrl><description>Ciudad de Charallave, municipio Cristóbal Rojas, estado Miranda</description><Point><coordinates>-66.892000,10.264000,0</coordinates></Point></Placemark>
+    <Placemark><n>FFE Cúa [TERMINAL][~]</n><styleUrl>#ffe_stop</styleUrl><description>Terminal Cúa · Ciudad de Cúa, municipio Urdaneta, estado Miranda</description><Point><coordinates>-66.876000,10.159000,0</coordinates></Point></Placemark>
+  </Folder>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 4 — METROCABLE (2 líneas)
+  ══════════════════════════════════════════════════════════ -->
+  <Folder>
+    <n>Metrocable</n>
+    <visibility>1</visibility>
+    <description>Teleférico urbano. 2 líneas operativas. Integrado al sistema SUVE. Operado por C.A. Metro de Caracas.</description>
+    <Folder>
+      <n>MC1 — Parque Central ↔ San Agustín del Sur</n>
+      <visibility>1</visibility>
+      <description>5 estaciones · ~1.8 km · Inaugurado 2010 · Conecta L4 (Parque Central) con barrio San Agustín del Sur · Coordenadas estimadas [~]</description>
+      <Placemark><n>MC1 Trayecto [~]</n><styleUrl>#cable_line</styleUrl><LineString><tessellate>1</tessellate><coordinates>-66.892000,10.497000,0 -66.888000,10.499000,0 -66.884000,10.501000,0 -66.880000,10.503000,0 -66.876000,10.505000,0</coordinates></LineString></Placemark>
+      <Placemark><n>MC1·01 Parque Central [TRANSBORDO L4][~]</n><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.892000,10.497000,0</coordinates></Point></Placemark>
+      <Placemark><n>MC1·02 Hornos de Cal [~]</n><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.888000,10.499000,0</coordinates></Point></Placemark>
+      <Placemark><n>MC1·03 La Ceiba [~]</n><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.884000,10.501000,0</coordinates></Point></Placemark>
+      <Placemark><n>MC1·04 El Manguito [~]</n><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.880000,10.503000,0</coordinates></Point></Placemark>
+      <Placemark><n>MC1·05 San Agustín del Sur [TERMINAL][~]</n><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.876000,10.505000,0</coordinates></Point></Placemark>
+    </Folder>
+    <Folder>
+      <n>MC2 — Palo Verde ↔ Mariche</n>
+      <visibility>1</visibility>
+      <description>4 estaciones · ~4 km · Inaugurado 2012 · Conecta L1 (Palo Verde) con sector Mariche · Coordenadas parcialmente estimadas [~]</description>
+      <Placemark><n>MC2 Trayecto [OSM+~]</n><styleUrl>#cable_line</styleUrl><LineString><tessellate>1</tessellate><coordinates>-66.798835,10.478519,0 -66.787000,10.486000,0 -66.774000,10.493000,0 -66.759000,10.502000,0</coordinates></LineString></Placemark>
+      <Placemark><n>MC2·01 Palo Verde II [TRANSBORDO L1][OSM]</n><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.798835,10.478519,0</coordinates></Point></Placemark>
+      <Placemark><n>MC2·02 Caucagüita [~]</n><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.787000,10.486000,0</coordinates></Point></Placemark>
+      <Placemark><n>MC2·03 El Clavo [~]</n><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.774000,10.493000,0</coordinates></Point></Placemark>
+      <Placemark><n>MC2·04 Mariche [TERMINAL][~]</n><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.759000,10.502000,0</coordinates></Point></Placemark>
+    </Folder>
+  </Folder>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 5 — CABLETRÉN PETARE
+  ══════════════════════════════════════════════════════════ -->
+  <Folder>
+    <n>Cabletrén Petare</n>
+    <visibility>1</visibility>
+    <description>4 estaciones · Inaugurado 2013 · Sistema automático sin conductor · Petare (L1) → Las Casitas · Coordenadas estimadas [~]</description>
+    <Placemark><n>Cabletrén Trayecto [OSM+~]</n><styleUrl>#ct_line</styleUrl><LineString><tessellate>1</tessellate><coordinates>-66.807223,10.478710,0 -66.798000,10.480000,0 -66.793000,10.477500,0 -66.788000,10.475000,0</coordinates></LineString></Placemark>
+    <Placemark><n>CT·01 Petare [TRANSBORDO L1][OSM]</n><styleUrl>#ct_stop</styleUrl><Point><coordinates>-66.807223,10.478710,0</coordinates></Point></Placemark>
+    <Placemark><n>CT·02 El Carmen [~]</n><styleUrl>#ct_stop</styleUrl><Point><coordinates>-66.798000,10.480000,0</coordinates></Point></Placemark>
+    <Placemark><n>CT·03 Vista Hermosa [~]</n><styleUrl>#ct_stop</styleUrl><Point><coordinates>-66.793000,10.477500,0</coordinates></Point></Placemark>
+    <Placemark><n>CT·04 Las Casitas [TERMINAL][~]</n><styleUrl>#ct_stop</styleUrl><Point><coordinates>-66.788000,10.475000,0</coordinates></Point></Placemark>
+  </Folder>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 6 — BUSCARACAS / LÍNEA 7 METRO (BRT)
+       Corredor BRT con carril exclusivo.
+       Av. Fuerzas Armadas / Av. Nueva Granada.
+       Inaugurado oct. 2012. Renombrado MetroBus Caracas 2024.
+       Horario: no especificado, asume horario metro.
+  ══════════════════════════════════════════════════════════ -->
+  <Folder>
+    <n>BusCaracas — L7 Metro (Los Ilustres ↔ Las Flores)</n>
+    <visibility>1</visibility>
+    <description>[TRAYECTO VERIFICADO] Corredor BRT · Carril exclusivo Av. Fuerzas Armadas / Nueva Granada · Buses articulados Yutong GNC · 5.2 km · 11 estaciones · Inaugurado oct. 2012 · Renombrado MetroBus Caracas en 2024 · Integrado SUVE · Fuente: es.wikipedia.org/wiki/BusCaracas</description>
+    <Placemark>
+      <n>L7 Trayecto (Av. Fuerzas Armadas / Nueva Granada) [DOC]</n>
+      <styleUrl>#brt_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.930600,10.514800,0
+        -66.926700,10.510000,0
+        -66.922800,10.505200,0
+        -66.918900,10.500400,0
+        -66.915000,10.495600,0
+        -66.911100,10.494000,0
+        -66.907200,10.493200,0
+        -66.903300,10.494000,0
+        -66.899400,10.494000,0
+        -66.895900,10.490000,0
+        -66.892400,10.485800,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><n>L7·01 Los Ilustres [TERMINAL]</n><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.930600,10.514800,0</coordinates></Point></Placemark>
+    <Placemark><n>L7·02 Marín</n><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.922800,10.505200,0</coordinates></Point></Placemark>
+    <Placemark><n>L7·03 El Cementerio</n><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.918900,10.500400,0</coordinates></Point></Placemark>
+    <Placemark><n>L7·04 Simón Rodríguez</n><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.915000,10.495600,0</coordinates></Point></Placemark>
+    <Placemark><n>L7·05 Fuerzas Armadas [TRANSBORDO L1 La Hoyada]</n><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.907200,10.493200,0</coordinates></Point></Placemark>
+    <Placemark><n>L7·06 Puerta Caracas [TRANSBORDO L1 Caño Amarillo]</n><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.899400,10.494000,0</coordinates></Point></Placemark>
+    <Placemark><n>L7·07 El Silencio [TRANSBORDO L1 L2]</n><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.895900,10.490000,0</coordinates></Point></Placemark>
+    <Placemark><n>L7·08 Las Flores [TERMINAL]</n><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.892400,10.485800,0</coordinates></Point></Placemark>
+  </Folder>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 7 — METROBÚS (rutas urbanas activas 2024)
+       [OCULTO POR DEFECTO]
+       Solo terminales. Sin datos GTFS públicos disponibles.
+  ══════════════════════════════════════════════════════════ -->
+  <Folder>
+    <n>Metrobús — Rutas Urbanas Activas 2024</n>
+    <visibility>0</visibility>
+    <description>[OCULTO POR DEFECTO] [SOLO TERMINALES] 10 rutas confirmadas activas (El Universal abr. 2024, Sumarium ago. 2024). La trayectoria exacta requiere datos GTFS no disponibles públicamente. Para rutas detalladas, usar app Moovit Caracas.</description>
+    <Placemark><n>MB-A | Colinas de Bello Monte [Origen]</n><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.862000,10.478300,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-A | Plaza Venezuela [Destino]</n><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-B | La Florida [Origen]</n><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.879500,10.502300,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-B | Sabana Grande [Destino]</n><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.876207,10.493839,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-C | Sarría–Simón Rodríguez [Origen]</n><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.900200,10.510700,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-D | San Bernardino ↔ Bellas Artes (Ruta 421)</n><styleUrl>#mb_term</styleUrl><description>Ruta circular · 21 paradas · Opera 5:03–22:54</description><Point><coordinates>-66.888000,10.507300,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-E | San Agustín [Origen] → Nuevo Circo</n><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.875100,10.504400,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-F | Santa Mónica–UCV [Origen] → Nelson Mandela</n><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.884000,10.486000,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-G | Fuerte Tiuna [Origen] → Los Jardines del Valle</n><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.914800,10.462400,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-H | Puerta Caracas ↔ Capitolio (Ruta 561)</n><styleUrl>#mb_term</styleUrl><description>Opera 5:11–23:02</description><Point><coordinates>-66.920000,10.498000,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-I | La Paz (L2) → Montalbán–Antímano</n><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.930000,10.473000,0</coordinates></Point></Placemark>
+    <Placemark><n>MB-J | UD4–UD5 (Caricuao) → Zoológico</n><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.972000,10.451000,0</coordinates></Point></Placemark>
+  </Folder>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 8 — TRANSCHACAO (3 rutas)
+       [OCULTO POR DEFECTO]
+  ══════════════════════════════════════════════════════════ -->
+  <Folder>
+    <n>TransChacao — Municipio Chacao</n>
+    <visibility>0</visibility>
+    <description>[OCULTO POR DEFECTO] [SOLO TERMINALES] Operador municipal del municipio Chacao. 6 rutas, 104 paradas. Zonas: El Bosque, El Rosal, La Castellana, Country Club, Bello Campo, Pedregal.</description>
+    <Placemark><n>TC-1 | Pedregal [Origen]</n><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.849000,10.498200,0</coordinates></Point></Placemark>
+    <Placemark><n>TC-1 | Plaza Bolívar de Chacao [Destino]</n><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.854536,10.493031,0</coordinates></Point></Placemark>
+    <Placemark><n>TC-5 | El Rosal / El Bosque [Origen]</n><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.860000,10.492000,0</coordinates></Point></Placemark>
+    <Placemark><n>TC-5 | La Castellana [Destino]</n><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.847000,10.490000,0</coordinates></Point></Placemark>
+    <Placemark><n>TC-6 | El Retiro [Origen]</n><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.845000,10.489500,0</coordinates></Point></Placemark>
+    <Placemark><n>TC-6 | Bello Campo [Destino]</n><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.853000,10.493000,0</coordinates></Point></Placemark>
+  </Folder>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 9 — LÍNEAS PRIVADAS / BUSETAS (16 líneas)
+       [OCULTO POR DEFECTO]
+       Regla del 80 %:
+       [TRAYECTO POR AVENIDA]: avenida documentada en fuente primaria
+       [SOLO TERMINALES]: solo extremos confirmados
+       Sentidos: donde la vuelta usa avenida distinta, se documenta.
+  ══════════════════════════════════════════════════════════ -->
+  <Folder>
+    <n>Líneas Privadas / Busetas (16 líneas)</n>
+    <visibility>0</visibility>
+    <description>[OCULTO POR DEFECTO] Fuente: TalCual Digital (feb. 2023). 5 líneas con trayecto por avenida verificada; 11 con solo terminales. Nota sobre sentidos: en Caracas es común que la ida y la vuelta usen avenidas distintas. Esto está documentado donde se conoce.</description>
+
+    <!-- P01 TRAYECTO POR AVENIDA [Av. Francisco de Miranda] -->
+    <Folder>
+      <n>P01 — Línea Petare / Ruta 25 [Trayecto Av. Fco. de Miranda]</n>
+      <visibility>0</visibility>
+      <description>[TRAYECTO POR AVENIDA] Av. Francisco de Miranda, sentido E-O (Petare→Centro) · IDA: Av. San Martín → Av. Fuerzas Armadas → Av. Francisco de Miranda → Petare · VUELTA: puede variar; algunas unidades usan Autopista Fajardo de regreso · Fuente: TalCual Digital feb. 2023</description>
+      <Placemark><n>P01 Ruta IDA (Av. Fco. de Miranda)</n><styleUrl>#priv_petare_line</styleUrl><LineString><tessellate>1</tessellate><coordinates>-66.925000,10.497000,0 -66.903000,10.501000,0 -66.881407,10.495804,0 -66.865000,10.492500,0 -66.854536,10.493031,0 -66.845000,10.492000,0 -66.812000,10.482000,0 -66.807223,10.478710,0</coordinates></LineString></Placemark>
+      <Placemark><n>P01 | Origen: Av. San Martín / Catia</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+      <Placemark><n>P01 | Destino: Petare / Puente Baloa</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.807223,10.478710,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- P02 TRAYECTO POR AVENIDA [Autopista Fco. Fajardo] -->
+    <Folder>
+      <n>P02 — Línea Petare Expreso (Autopista Fajardo)</n>
+      <visibility>0</visibility>
+      <description>[TRAYECTO POR AVENIDA] Autopista Francisco Fajardo · Sin paradas intermedias · Tarifa mayor que ruta ordinaria · IDA = VUELTA por misma vía (autopista) · Fuente: TalCual Digital feb. 2023</description>
+      <Placemark><n>P02 Ruta Expreso (Autopista)</n><styleUrl>#priv_exp_line</styleUrl><LineString><tessellate>1</tessellate><coordinates>-66.900000,10.499000,0 -66.865000,10.492500,0 -66.845000,10.492000,0 -66.812000,10.482000,0 -66.807223,10.478710,0</coordinates></LineString></Placemark>
+      <Placemark><n>P02 | Origen: El Silencio</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.900000,10.499000,0</coordinates></Point></Placemark>
+      <Placemark><n>P02 | Destino: Petare / Puente Baloa</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.807223,10.478710,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- P04 TRAYECTO POR AVENIDA [Av. San Martín → Lecuna → Casanova] -->
+    <Folder>
+      <n>P04 — Línea UCO (La Vega → Chacaíto)</n>
+      <visibility>0</visibility>
+      <description>[TRAYECTO POR AVENIDA] Av. San Martín → Av. Lecuna → Av. Casanova · IDA: Los Canjilones → Chacaíto · VUELTA: puede usar Av. Casanova → Av. Libertador → Av. San Martín (sentido inverso) · Parada en Redoma La India (frente Galerías Paraíso) · Fuente: TalCual Digital feb. 2023</description>
+      <Placemark><n>P04 Ruta IDA (Av. San Martín / Lecuna / Casanova)</n><styleUrl>#priv_uco_line</styleUrl><LineString><tessellate>1</tessellate><coordinates>-66.931000,10.484000,0 -66.925000,10.497000,0 -66.903000,10.501000,0 -66.900000,10.499000,0 -66.881407,10.495804,0 -66.865000,10.492500,0</coordinates></LineString></Placemark>
+      <Placemark><n>P04 | Origen: Los Canjilones, La Vega</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.931000,10.484000,0</coordinates></Point></Placemark>
+      <Placemark><n>P04 | Parada: Redoma La India / Galerías Paraíso</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+      <Placemark><n>P04 | Destino: Chacaíto</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.865000,10.492500,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- P06 TRAYECTO POR AVENIDA [Av. J.A. Páez → Quinta Crespo] -->
+    <Folder>
+      <n>P06 — Línea Capitolio / Los Caciques (La Vega → El Silencio)</n>
+      <visibility>0</visibility>
+      <description>[TRAYECTO POR AVENIDA] Av. José Antonio Páez → Quinta Crespo → Capitolio → El Silencio · IDA: Redoma La India → El Silencio · VUELTA: El Silencio → puede usar Av. Baralt → Av. Lecuna → Av. Páez · Fuente: TalCual Digital feb. 2023</description>
+      <Placemark><n>P06 Ruta IDA (Av. J.A. Páez)</n><styleUrl>#priv_caciques_line</styleUrl><LineString><tessellate>1</tessellate><coordinates>-66.925000,10.497000,0 -66.920000,10.495000,0 -66.915000,10.496000,0 -66.908000,10.497200,0 -66.903000,10.499800,0 -66.900000,10.499000,0</coordinates></LineString></Placemark>
+      <Placemark><n>P06 | Origen: Redoma La India</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+      <Placemark><n>P06 | Quinta Crespo</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.915000,10.496000,0</coordinates></Point></Placemark>
+      <Placemark><n>P06 | Destino: El Silencio / Esq. Salas</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.900000,10.499000,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- P08 TRAYECTO POR AVENIDA [Av. San Martín] -->
+    <Folder>
+      <n>P08 — Línea Casalta (Propatria → Chacaíto)</n>
+      <visibility>0</visibility>
+      <description>[TRAYECTO POR AVENIDA] Av. San Martín · IDA: Propatria/Casalta → Chacaíto · VUELTA: puede usar Av. Fuerzas Armadas y Av. San Martín de regreso · Parada en Metrocenter (Av. San Martín) · Fuente: TalCual Digital feb. 2023</description>
+      <Placemark><n>P08 Ruta IDA (Av. San Martín)</n><styleUrl>#priv_casalta_line</styleUrl><LineString><tessellate>1</tessellate><coordinates>-66.955959,10.504739,0 -66.925000,10.497000,0 -66.903000,10.501000,0 -66.900000,10.499000,0 -66.881407,10.495804,0 -66.865000,10.492500,0</coordinates></LineString></Placemark>
+      <Placemark><n>P08 | Origen: Propatria / Casalta</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.955959,10.504739,0</coordinates></Point></Placemark>
+      <Placemark><n>P08 | Parada: Metrocenter / Av. San Martín</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+      <Placemark><n>P08 | Destino: Chacaíto</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.865000,10.492500,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- P03 SOLO TERMINALES -->
+    <Placemark><n>P03 | Origen: Chacaíto (Línea Las Minas–Baruta)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] Chacaíto → La Trinidad → Santa Fe → El Cafetal → Valle Arriba → Alto Prado → Las Minas. Ruta interior Baruta sin avenida principal documentada.</description><Point><coordinates>-66.865000,10.492500,0</coordinates></Point></Placemark>
+    <Placemark><n>P03 | Destino: Las Minas – Redoma de Baruta</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.847800,10.454500,0</coordinates></Point></Placemark>
+
+    <Placemark><n>P05 | Origen: Cota 905 (Línea Catia – La Cota)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] Cota 905 → Antímano → Redoma La India → Pérez Bonalde/Catia. Pasaje Bs 5. Horario: 5:00–16:00. Fuente: TalCual Digital feb. 2023.</description><Point><coordinates>-66.945000,10.478000,0</coordinates></Point></Placemark>
+    <Placemark><n>P05 | Destino: Pérez Bonalde / Catia</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.942000,10.505000,0</coordinates></Point></Placemark>
+
+    <Placemark><n>P07 | Origen: Redoma La India (Línea Antímano–Zoológico)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] Redoma La India → Montalbán → Antímano → Metro Zoológico (L2). Fuente: TalCual Digital feb. 2023.</description><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><n>P07 | Destino: Zoológico / Metro Caricuao (L2)</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.961000,10.413000,0</coordinates></Point></Placemark>
+
+    <Placemark><n>P09 | Origen: Los Mecedores (Línea San Agustín)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] Los Mecedores → San Agustín → El Silencio. Parada en Metrocenter. Fuente: TalCual Digital feb. 2023.</description><Point><coordinates>-66.945000,10.507000,0</coordinates></Point></Placemark>
+    <Placemark><n>P09 | Destino: El Silencio</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.900000,10.499000,0</coordinates></Point></Placemark>
+
+    <Placemark><n>P10 | Origen: La Pastora (Línea La Pastora–Macaracuay)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] La Pastora → Macaracuay → C.C. Plaza Las Américas → Petare. Horario: desde 5:00 am. Fuente: TalCual Digital feb. 2023.</description><Point><coordinates>-66.890000,10.510000,0</coordinates></Point></Placemark>
+    <Placemark><n>P10 | Destino: Petare</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.807223,10.478710,0</coordinates></Point></Placemark>
+
+    <Placemark><n>P11 | Origen: Av. Baralt (Línea El Paraíso–La India)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] Av. Baralt → El Calvario → El Paraíso → Redoma La India. Fuente: TalCual Digital feb. 2023.</description><Point><coordinates>-66.896000,10.492000,0</coordinates></Point></Placemark>
+    <Placemark><n>P11 | Destino: Redoma La India</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+
+    <Placemark><n>P12 | Origen: Av. Baralt (Línea Sabana de Blanco)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] Av. Baralt → Cotiza → Av. Panteón → Sabana de Blanco. Fuente: TalCual Digital feb. 2023.</description><Point><coordinates>-66.896000,10.492000,0</coordinates></Point></Placemark>
+    <Placemark><n>P12 | Destino: Sabana de Blanco (norte)</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.885000,10.520000,0</coordinates></Point></Placemark>
+
+    <Placemark><n>P13 | Origen: Plaza Venezuela (Línea Carabobo–Tiuna)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] Plaza Cipriano Castro → Los Símbolos → Autopista Valle-Coche → Fuerte Tiuna → La Rinconada. Pasaje Bs 6 (autopista)/Bs 5 (vía). Fuente: TalCual Digital feb. 2023.</description><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+    <Placemark><n>P13 | Destino: La Rinconada / Ferroviaria</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.936409,10.434658,0</coordinates></Point></Placemark>
+
+    <Placemark><n>P14 | Origen: Redoma La India, Av. Teherán (Línea Chacao–PV)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] Av. Teherán → Chacao → Chacaíto → Plaza Venezuela. Fuente: TalCual Digital feb. 2023.</description><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><n>P14 | Destino: Plaza Venezuela</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+
+    <Placemark><n>P15 | Origen: Fuerte Tiuna (Línea Fuerte Tiuna–La Bandera)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] Fuerte Tiuna → Av. Nueva Granada → La Bandera. Complementa corredor L3.</description><Point><coordinates>-66.914800,10.462400,0</coordinates></Point></Placemark>
+    <Placemark><n>P15 | Destino: Terminal La Bandera</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.902000,10.476000,0</coordinates></Point></Placemark>
+
+    <Placemark><n>P16 | Origen: Cotiza / La Pastora norte (Línea Cotiza–Centro)</n><styleUrl>#priv_term</styleUrl><description>[SOLO TERMINALES] Cotiza → Av. Urdaneta → Capitolio → El Silencio. Fuente: Moovit / TalCual.</description><Point><coordinates>-66.880000,10.520000,0</coordinates></Point></Placemark>
+    <Placemark><n>P16 | Destino: El Silencio / Capitolio</n><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.900000,10.499000,0</coordinates></Point></Placemark>
+  </Folder>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 10 — TERMINALES Y NODOS INTERMODALES
+  ══════════════════════════════════════════════════════════ -->
+  <Folder>
+    <n>Terminales y Nodos Intermodales</n>
+    <visibility>1</visibility>
+    <description>Principales puntos de transbordo, terminales y nodos informales de la ciudad.</description>
+    <Placemark><n>★ Terminal La Bandera (Interurbano Occidente)</n><styleUrl>#hub_mayor</styleUrl><description>Terminal de pasajeros interurbano · Rutas a Maracay, Valencia, Mérida, Táchira, Colombia · Operador: SITSSA · Conexión Metro L3 (est. La Bandera) · Estado: Operativo</description><Point><coordinates>-66.902000,10.476000,0</coordinates></Point></Placemark>
+    <Placemark><n>★ Terminal de Oriente — Antonio J. de Sucre (TDO)</n><styleUrl>#hub_mayor</styleUrl><description>Terminal interurbano oriente · Rutas a Anzoátegui, Sucre, Bolívar, Colombia, Brasil · Operador: SITSSA · Km 1 Autopista Caracas–Guarenas · Estado: Operativo</description><Point><coordinates>-66.772100,10.498200,0</coordinates></Point></Placemark>
+    <Placemark><n>★ Terminal Plaza Venezuela (28 líneas urbanas)</n><styleUrl>#hub_mayor</styleUrl><description>Inaugurado jul. 2025 · 6 andenes: andén 1 Los Teques, andén 2 El Valle/Coche/La Rinconada, andén 3 Antímano/Las Adjuntas/Macarao, andén 4 La Vega/El Junquito, andén 5 UCV/Santa Rosalía, andén 6 Chacao/Petare/Baruta/Las Mercedes · OSM coord L1/L3/L4</description><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+    <Placemark><n>◆ Nodo Redoma La India (5 líneas privadas)</n><styleUrl>#hub_menor</styleUrl><description>Nodo privado informal clave · Av. J.A. Páez / O'Higgins / Teherán / Av. La Vega · Líneas P04 UCO, P05 La Cota, P06 Los Caciques, P07 La India, P14 Chacao-PV · Activo desde 5:00 am</description><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><n>◆ Nodo Metrocenter / Av. San Martín (líneas oeste)</n><styleUrl>#hub_menor</styleUrl><description>C.C. Metrocenter · Paradas: P01 Petare, P04 UCO, P08 Casalta-Chacaíto, P09 San Agustín-El Silencio, y otras · Principal nodo de busetas del corredor oeste</description><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><n>◆ Nodo Las Adjuntas (Metro L2 + Los Teques)</n><styleUrl>#hub_menor</styleUrl><description>Terminal SW de L2 · Transbordo a Metro Los Teques · Patio de maniobras Adjuntas (mantenimiento L2 y L4)</description><Point><coordinates>-66.981000,10.395000,0</coordinates></Point></Placemark>
+    <Placemark><n>★ Ferroviaria La Rinconada — Tren Valles del Tuy</n><styleUrl>#hub_mayor</styleUrl><description>Estación Libertador Simón Bolívar del IFE · Trenes a Charallave y Cúa (edo. Miranda) · Integrado con Metro L3 · Coord [OSM]: Wikidata Q5965109</description><Point><coordinates>-66.936409,10.434658,0</coordinates></Point></Placemark>
+  </Folder>
+
+</Document>
+</kml>
