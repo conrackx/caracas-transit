@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Sistemas Masivos Integrados — Caracas</name>
+  <description>Metrocable MC1 y MC2, Cabletrén Petare, BusCaracas (Línea 7 Metro). Todos integrados al sistema de la C.A. Metro de Caracas.</description>
+
+  <!-- Metrocable Violeta #790D9B -->
+  <Style id="cable_line"><LineStyle><color>FF9B0D79</color><width>4</width></LineStyle></Style>
+  <Style id="cable_stop"><IconStyle><color>FF9B0D79</color><scale>0.7</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
+
+  <!-- Cabletrén Verde Lima #32CD32 -->
+  <Style id="ct_line"><LineStyle><color>FF32CD32</color><width>4</width></LineStyle></Style>
+  <Style id="ct_stop"><IconStyle><color>FF32CD32</color><scale>0.65</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href></Icon></IconStyle><LabelStyle><scale>0.6</scale></LabelStyle></Style>
+
+  <!-- BusCaracas L7 Rojo #CC2222 -->
+  <Style id="brt_line"><LineStyle><color>FF2222CC</color><width>4</width></LineStyle></Style>
+  <Style id="brt_stop"><IconStyle><color>FF2222CC</color><scale>0.7</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/bus.png</href></Icon></IconStyle><LabelStyle><scale>0.6</scale></LabelStyle></Style>
+
+  <!-- ─────────────────────────────────────────────
+       METROCABLE MC1 — Parque Central ↔ San Agustín del Sur
+       5 estaciones · ~1.8 km · Inaugurado 2010
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>MC1 — Parque Central ↔ San Agustín del Sur</name>
+    <visibility>1</visibility>
+    <description>5 estaciones · ~1.8 km · Inaugurado 2010 · Teleférico urbano · Conecta L4 (Parque Central) con barrio San Agustín del Sur · Coordenadas estimadas [~]</description>
+    <Placemark>
+      <name>MC1 Trayecto [~]</name>
+      <styleUrl>#cable_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.892000,10.497000,0
+        -66.888000,10.499000,0
+        -66.884000,10.501000,0
+        -66.880000,10.503000,0
+        -66.876000,10.505000,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>MC1·01 Parque Central [TRANSBORDO L4][~]</name><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.892000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><name>MC1·02 Hornos de Cal [~]</name><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.888000,10.499000,0</coordinates></Point></Placemark>
+    <Placemark><name>MC1·03 La Ceiba [~]</name><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.884000,10.501000,0</coordinates></Point></Placemark>
+    <Placemark><name>MC1·04 El Manguito [~]</name><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.880000,10.503000,0</coordinates></Point></Placemark>
+    <Placemark><name>MC1·05 San Agustín del Sur [TERMINAL][~]</name><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.876000,10.505000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- ─────────────────────────────────────────────
+       METROCABLE MC2 — Palo Verde ↔ Mariche
+       4 estaciones · ~4 km · Inaugurado 2012
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>MC2 — Palo Verde ↔ Mariche</name>
+    <visibility>1</visibility>
+    <description>4 estaciones · ~4 km · Inaugurado 2012 · Conecta L1 (Palo Verde) con sector Mariche</description>
+    <Placemark>
+      <name>MC2 Trayecto [OSM+~]</name>
+      <styleUrl>#cable_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.798835,10.478519,0
+        -66.787000,10.486000,0
+        -66.774000,10.493000,0
+        -66.759000,10.502000,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>MC2·01 Palo Verde II [TRANSBORDO L1][OSM]</name><styleUrl>#cable_stop</styleUrl><description>Wikidata Q9054862 (estación Palo Verde L1)</description><Point><coordinates>-66.798835,10.478519,0</coordinates></Point></Placemark>
+    <Placemark><name>MC2·02 Caucagüita [~]</name><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.787000,10.486000,0</coordinates></Point></Placemark>
+    <Placemark><name>MC2·03 El Clavo [~]</name><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.774000,10.493000,0</coordinates></Point></Placemark>
+    <Placemark><name>MC2·04 Mariche [TERMINAL][~]</name><styleUrl>#cable_stop</styleUrl><Point><coordinates>-66.759000,10.502000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- ─────────────────────────────────────────────
+       CABLETRÉN PETARE
+       4 estaciones · Inaugurado 2013
+       Sistema automático sin conductor (AGT)
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>Cabletrén Petare — Petare ↔ Las Casitas</name>
+    <visibility>1</visibility>
+    <description>4 estaciones · Inaugurado 2013 · Sistema AGT (Automated Guided Transit) sin conductor · Conecta estación Petare (L1) con el barrio Las Casitas</description>
+    <Placemark>
+      <name>Cabletrén Trayecto [OSM+~]</name>
+      <styleUrl>#ct_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.807223,10.478710,0
+        -66.798000,10.480000,0
+        -66.793000,10.477500,0
+        -66.788000,10.475000,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>CT·01 Petare [TRANSBORDO L1][OSM]</name><styleUrl>#ct_stop</styleUrl><description>Wikidata Q6073300</description><Point><coordinates>-66.807223,10.478710,0</coordinates></Point></Placemark>
+    <Placemark><name>CT·02 El Carmen [~]</name><styleUrl>#ct_stop</styleUrl><Point><coordinates>-66.798000,10.480000,0</coordinates></Point></Placemark>
+    <Placemark><name>CT·03 Vista Hermosa [~]</name><styleUrl>#ct_stop</styleUrl><Point><coordinates>-66.793000,10.477500,0</coordinates></Point></Placemark>
+    <Placemark><name>CT·04 Las Casitas [TERMINAL][~]</name><styleUrl>#ct_stop</styleUrl><Point><coordinates>-66.788000,10.475000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- ─────────────────────────────────────────────
+       BUSCARACAS / LÍNEA 7 METRO (BRT)
+       Corredor BRT · Av. Fuerzas Armadas / Nueva Granada
+       8 estaciones documentadas · 5.2 km
+       Inaugurado oct. 2012 · Renombrado MetroBus Caracas 2024
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>BusCaracas — L7 Metro (Los Ilustres ↔ Las Flores)</name>
+    <visibility>1</visibility>
+    <description>Corredor BRT · Carril exclusivo Av. Fuerzas Armadas / Av. Nueva Granada · Buses articulados Yutong GNC · 5.2 km · Inaugurado oct. 2012 · Renombrado MetroBus Caracas en 2024 · Integrado al sistema SUVE · Fuente: es.wikipedia.org/wiki/BusCaracas</description>
+    <Placemark>
+      <name>L7 Trayecto (Av. Fuerzas Armadas / Nueva Granada) [DOC]</name>
+      <styleUrl>#brt_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.930600,10.514800,0
+        -66.926700,10.510000,0
+        -66.922800,10.505200,0
+        -66.918900,10.500400,0
+        -66.915000,10.495600,0
+        -66.911100,10.494000,0
+        -66.907200,10.493200,0
+        -66.903300,10.494000,0
+        -66.899400,10.494000,0
+        -66.895900,10.490000,0
+        -66.892400,10.485800,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>L7·01 Los Ilustres [TERMINAL]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.930600,10.514800,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·02 Marín</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.922800,10.505200,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·03 El Cementerio</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.918900,10.500400,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·04 Simón Rodríguez</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.915000,10.495600,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·05 Fuerzas Armadas [TRANSBORDO L1 La Hoyada]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.907200,10.493200,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·06 Puerta Caracas [TRANSBORDO L1 Caño Amarillo]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.899400,10.494000,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·07 El Silencio [TRANSBORDO L1 L2]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.895900,10.490000,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·08 Las Flores [TERMINAL]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.892400,10.485800,0</coordinates></Point></Placemark>
+  </Folder>
+
+</Document>
+</kml>
