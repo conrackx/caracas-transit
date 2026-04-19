@@ -1,54 +1,76 @@
-# Transporte Urbano Caracas — v4 (2025)
+# Caracas Transit — Cartografía del Transporte Urbano
 
-Este repositorio contiene la cartografía digital avanzada del sistema de transporte de la Gran Caracas en formato KML. La **v4.0 (Abril 2025)** representa la actualización más ambiciosa hasta la fecha, integrando datos verificados de OpenStreetMap (OSM) y Wikidata para ofrecer una precisión técnica superior.
-
-## 🚀 Lo nuevo en la Versión 4.0
-
-Esta versión ha sido reconstruida desde cero para priorizar la precisión geográfica y la riqueza de metadatos.
-
-| Mejora | Detalle Técnico |
-| :--- | :--- |
-| **Precisión GPS** | ✅ 19 puntos críticos `[OSM]` verificados y 55 puntos `[~]` estimados. |
-| **Identidad Visual** | ✅ Colores oficiales del Metro (ej. L1 `#FF7400`) vinculados a Wikidata Q1363954. |
-| **Sistemas Masivos** | ✅ Inclusión de Metro Los Teques (4 estaciones) y Ferrocarril Valles del Tuy. |
-| **Metadatos Detallados** | ✅ Horarios, fechas de inauguración y estado operativo en cada etiqueta. |
-| **Documentación Local** | ✅ Sentidos de circulación para las principales líneas de busetas privadas. |
-| **Organización** | ✅ 153 elementos distribuidos en 22 capas temáticas. |
-
-## 🛠️ Guía de Implementación: NetworkLink (Actualización Automática)
-
-La función más potente de este repositorio es el **NetworkLink**. Esto permite que tu Google Earth se sincronice automáticamente con este repositorio: cada vez que yo actualice el mapa en GitHub, tu visualización se actualizará sola sin que tengas que descargar nada nuevo.
-
-## 🚀 Cómo utilizar (Recomendado)
-
-Para que el mapa se mantenga actualizado automáticamente en tu computadora sin tener que descargar archivos nuevos en el futuro, utiliza el método **NetworkLink**:
-
-1. **Descarga el archivo de enlace:**
-   Haz clic en [networklink_caracas.kml](https://github.com/conrackx/caracas-transit/blob/master/networklink_caracas.kml) y descárgalo en tu equipo (botón *Download raw file*).
-
-2. **Ábrelo en Google Earth:**
-   Ejecuta el archivo descargado. Google Earth creará una conexión directa con este repositorio.
-
-3. **¡Listo!:**
-   Cada vez que abras Google Earth, el sistema consultará este repositorio y descargará automáticamente cualquier mejora o nueva ruta que yo haya añadido, sin que tengas que hacer nada.
+Cartografía digital del sistema de transporte público de Caracas en formato KML.
+Cubre el Metro de Caracas, Metrocable, Cabletrén, BusCaracas, Metrobús, TransChacao,
+Metro de Los Teques, Ferrocarril Valles del Tuy y 16 líneas privadas documentadas.
 
 ---
 
-### ⚠️ Notas de compatibilidad
-* **Google Earth Pro (Escritorio):** Soporta todas las funciones de actualización automática.
-* **Google Maps (My Maps):** No es compatible con NetworkLink. Si usas Google Maps, deberás importar manualmente el archivo `caracas_transporte.kml` cada vez que desees ver una actualización.
+## Usar en Google Earth (recomendado)
 
-## 📌 Especificaciones de Coordenadas
+Descarga [`networklink.kml`](networklink.kml) y ábrelo en Google Earth Pro.
 
-Para garantizar la transparencia en la precisión de los datos, cada punto cuenta con una etiqueta de origen:
-* `[OSM]`: Verificado contra OpenStreetMap (error <10m).
-* `[~]`: Estimado por interpolación o conocimiento local (error ±300m).
-* `[DOC]`: Basado en fuentes documentales oficiales donde no hay coordenadas GPS públicas.
+Eso es todo. Google Earth descargará el mapa completo y lo mantendrá actualizado
+automáticamente cada 24 horas sin que tengas que hacer nada más.
 
-## 📖 Fuentes y Referencias
-- **Sistemas Metro:** Datos operativos actualizados a Abril 2025 vía Wikipedia y reportes de movilidad.
-- **Geometría:** Nodos intermodales y terminales informales validados mediante análisis de campo y OSM.
-- **Identidad:** Paleta de colores oficial según manuales de diseño de sistemas de transporte masivo.
+> **Google Maps (My Maps)** no soporta actualización automática.
+> Para usarlo allí, importa manualmente `caracas_transporte.kml` cada vez que quieras la versión más reciente.
 
 ---
-*Este proyecto es una iniciativa abierta para mejorar la accesibilidad a la información de movilidad en Caracas. Si encuentras un error o quieres añadir una ruta, siéntete libre de abrir un "Issue" o enviar un "Pull Request".*
+
+## Estructura del repositorio
+
+```
+caracas-transit/
+├── README.md                          Este archivo
+├── caracas_transporte.kml             Índice maestro (solo NetworkLinks)
+├── networklink.kml                    Entrada para el usuario final
+├── data/
+│   ├── metro.kml                      Metro de Caracas L1–L5
+│   ├── sistemas_masivos.kml           Metrocable, Cabletrén, BusCaracas L7
+│   ├── sistemas_regionales.kml        Metro Los Teques, Ferrocarril Valles del Tuy
+│   ├── transporte_complementario.kml  Metrobús (10 rutas), TransChacao
+│   ├── lineas_privadas.kml            16 líneas privadas y busetas
+│   └── terminales.kml                 Terminales y nodos intermodales
+└── docs/
+    ├── SOURCES.md                     Fuentes y coordenadas verificadas
+    └── STYLE_GUIDE.md                 Estándares de colores, iconos y nomenclatura
+```
+
+---
+
+## Precisión de coordenadas
+
+| Etiqueta | Origen | Precisión |
+|----------|--------|-----------|
+| `[OSM]` | Wikidata verificado contra OpenStreetMap | < 10 m |
+| `[~]` | Interpolación geográfica o conocimiento de la arteria | ± 300 m |
+| `[DOC]` | Fuente documental sin coordenada GPS disponible | ± 500 m |
+
+Las 15 estaciones con coordenadas `[OSM]` están documentadas en [`docs/SOURCES.md`](docs/SOURCES.md).
+
+---
+
+## Capas del mapa
+
+| Capa | Visible por defecto | Contenido |
+|------|---------------------|-----------|
+| Metro de Caracas | Sí | L1–L5, 51 estaciones |
+| Sistemas Masivos | Sí | Metrocable MC1/MC2, Cabletrén, BusCaracas L7 |
+| Terminales | Sí | 3 terminales interurbanos, 1 urbano, 3 nodos |
+| Sistemas Regionales | No | Metro Los Teques, Ferrocarril Valles del Tuy |
+| Transporte Complementario | No | Metrobús (10 rutas), TransChacao |
+| Líneas Privadas | No | 16 busetas documentadas |
+
+---
+
+## Contribuir
+
+1. Abre un **Issue** describiendo el problema y la fuente que lo respalda
+2. O envía un **Pull Request** editando el archivo en `data/` correspondiente
+
+Antes de contribuir, lee [`docs/STYLE_GUIDE.md`](docs/STYLE_GUIDE.md).
+
+---
+
+*Proyecto abierto para mejorar la accesibilidad a información de movilidad en Caracas.*
