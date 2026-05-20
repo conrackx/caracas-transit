@@ -1,0 +1,21 @@
+{
+  "name": "caracas-transit",
+  "version": "1.0.0",
+  "description": "Cartografía digital del sistema de transporte público de Caracas en formato KML",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conrackx/caracas-transit"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "node scripts/validate-kml.js",
+    "generate-styles": "node scripts/generate-styles.js",
+    "build": "npm run generate-styles && npm run lint",
+    "precommit": "npm run lint"
+  },
+  "devDependencies": {
+    "fast-xml-parser": "^4.4.1",
+    "glob": "^10.4.0",
+    "js-yaml": "^4.1.0"
+  }
+}

@@ -1,0 +1,193 @@
+# Fuente única de verdad para todos los estilos del proyecto Caracas Transit.
+# Este archivo define colores, iconos, anchos y escalas para cada sistema.
+# Los scripts/generate-styles.js inyectan estos estilos en cada archivo KML.
+# Ver docs/STYLE_GUIDE.md para la documentación completa.
+
+# ─────────────────────────────────────────────
+# METRO DE CARACAS
+# ─────────────────────────────────────────────
+
+l1:
+  name: "Metro Línea 1"
+  color_hex: "#FF7400"
+  color_kml: "FF0074FF"
+  width_line: 5
+  icon: "http://maps.google.com/mapfiles/kml/shapes/rail.png"
+  files: ["metro.kml"]
+
+l2:
+  name: "Metro Línea 2"
+  color_hex: "#F5A800"
+  color_kml: "FF00A8F5"
+  width_line: 5
+  icon: "http://maps.google.com/mapfiles/kml/shapes/rail.png"
+  files: ["metro.kml"]
+
+l3:
+  name: "Metro Línea 3"
+  color_hex: "#0060AF"
+  color_kml: "FFAF6000"
+  width_line: 5
+  icon: "http://maps.google.com/mapfiles/kml/shapes/rail.png"
+  files: ["metro.kml"]
+
+l4:
+  name: "Metro Línea 4"
+  color_hex: "#007F3F"
+  color_kml: "FF3F7F00"
+  width_line: 5
+  icon: "http://maps.google.com/mapfiles/kml/shapes/rail.png"
+  files: ["metro.kml"]
+
+l5:
+  name: "Metro Línea 5"
+  type: single_station
+  color_hex: "#8B008B"
+  color_kml: "FF8B008B"
+  width_line: 4
+  icon: "http://maps.google.com/mapfiles/kml/shapes/rail.png"
+  files: ["metro.kml"]
+
+# ─────────────────────────────────────────────
+# SISTEMAS REGIONALES
+# ─────────────────────────────────────────────
+
+teques:
+  name: "Metro de Los Teques"
+  color_hex: "#446688"
+  color_kml: "FF886644"
+  width_line: 4
+  icon: "http://maps.google.com/mapfiles/kml/shapes/rail.png"
+  files: ["sistemas_regionales.kml"]
+
+ffe:
+  name: "Ferrocarril Valles del Tuy (IFE)"
+  color_hex: "#AA4422"
+  color_kml: "FF2244AA"
+  width_line: 4
+  icon: "http://maps.google.com/mapfiles/kml/shapes/rail.png"
+  files: ["sistemas_regionales.kml"]
+
+# ─────────────────────────────────────────────
+# SISTEMAS MASIVOS
+# ─────────────────────────────────────────────
+
+cable:
+  name: "Metrocable"
+  color_hex: "#790D9B"
+  color_kml: "FF9B0D79"
+  width_line: 4
+  icon: "http://maps.google.com/mapfiles/kml/shapes/airports.png"
+  files: ["sistemas_masivos.kml"]
+
+ct:
+  name: "Cabletrén"
+  color_hex: "#32CD32"
+  color_kml: "FF32CD32"
+  width_line: 4
+  icon: "http://maps.google.com/mapfiles/kml/shapes/airports.png"
+  files: ["sistemas_masivos.kml"]
+
+brt:
+  name: "BusCaracas / Línea 7"
+  color_hex: "#CC2222"
+  color_kml: "FF2222CC"
+  width_line: 4
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["sistemas_masivos.kml"]
+
+# ─────────────────────────────────────────────
+# TRANSPORTE COMPLEMENTARIO
+# ─────────────────────────────────────────────
+
+mb:
+  name: "Metrobús"
+  color_hex: "#CC6600"
+  color_kml: "FF0066CC"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["transporte_complementario.kml"]
+
+tc:
+  name: "TransChacao"
+  color_hex: "#008080"
+  color_kml: "FF808000"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["transporte_complementario.kml"]
+
+# ─────────────────────────────────────────────
+# LÍNEAS PRIVADAS
+# ─────────────────────────────────────────────
+
+p01:
+  name: "Línea Petare (Ruta 25)"
+  color_hex: "#FF7400"
+  color_kml: "FF0074FF"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p02:
+  name: "Línea Petare Expreso"
+  color_hex: "#FF2200"
+  color_kml: "FF0022FF"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p04:
+  name: "Línea UCO"
+  color_hex: "#00AAFF"
+  color_kml: "FFFFAA00"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p06:
+  name: "Línea Capitolio (Los Caciques)"
+  color_hex: "#9900CC"
+  color_kml: "FFCC0099"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p08:
+  name: "Línea Casalta"
+  color_hex: "#0066FF"
+  color_kml: "FFFF6600"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+# ─────────────────────────────────────────────
+# TERMINALES Y NODOS
+# ─────────────────────────────────────────────
+
+hub_mayor:
+  name: "Terminal Mayor"
+  icon: "http://maps.google.com/mapfiles/kml/paddle/red-stars.png"
+  scale: 1.2
+  label_scale: 0.85
+  files: ["terminales.kml"]
+
+hub_menor:
+  name: "Nodo Menor / Informal"
+  icon: "http://maps.google.com/mapfiles/kml/paddle/ylw-stars.png"
+  scale: 1.0
+  label_scale: 0.75
+  files: ["terminales.kml"]
+
+# ─────────────────────────────────────────────
+# ESCALAS DE ICONOS (jerarquía)
+# ─────────────────────────────────────────────
+
+scales:
+  terminal: 1.0
+  xfer: 0.85
+  stop: 0.6
+  stop_minor: 0.55
+  label_terminal: 0.75
+  label_xfer: 0.7
+  label_stop: 0.55
+  label_stop_minor: 0.5

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Transporte Complementario — Metrobús y TransChacao</name>
+  <description>Rutas urbanas activas de Metrobús (2024) y rutas municipales TransChacao. Se muestran solo terminales — la trayectoria exacta requiere datos GTFS no disponibles públicamente. Para rutas detalladas usar app Moovit Caracas. Fuente: El Universal abr. 2024, Sumarium ago. 2024.</description>
+
+  <!-- Metrobús Naranja #CC6600 -->
+  <Style id="mb_term"><IconStyle><color>FF0066CC</color><scale>0.8</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/bus.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
+
+  <!-- TransChacao Turquesa #008080 -->
+  <Style id="tc_term"><IconStyle><color>FF808000</color><scale>0.75</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/bus.png</href></Icon></IconStyle><LabelStyle><scale>0.6</scale></LabelStyle></Style>
+
+  <!-- ─────────────────────────────────────────────
+       METROBÚS — 10 rutas urbanas activas (2024)
+       [SOLO TERMINALES]
+       Fuente: El Universal abr. 2024, Sumarium ago. 2024
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>Metrobús — Rutas Urbanas Activas 2024</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] 10 rutas confirmadas activas a 2024. La trayectoria intermedia no puede confirmarse sin datos GTFS oficiales. Para detalle completo, usar Moovit Caracas.</description>
+    <Placemark><name>MB-A | Colinas de Bello Monte [Origen]</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.862000,10.478300,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-A | Plaza Venezuela [Destino]</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-B | La Florida [Origen]</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.879500,10.502300,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-B | Sabana Grande [Destino]</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.876207,10.493839,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-C | Sarría–Simón Rodríguez [Origen]</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.900200,10.510700,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-C | Plaza Venezuela [Destino]</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-D | San Bernardino ↔ Bellas Artes (Ruta 421)</name><styleUrl>#mb_term</styleUrl><description>Ruta circular · 21 paradas · Opera 5:03–22:54 todos los días</description><Point><coordinates>-66.888000,10.507300,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-E | San Agustín [Origen] → Nuevo Circo</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.875100,10.504400,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-F | Santa Mónica–UCV [Origen] → Nelson Mandela</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.884000,10.486000,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-G | Fuerte Tiuna [Origen] → Los Jardines del Valle</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.914800,10.462400,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-H | Puerta Caracas ↔ Capitolio (Ruta 561)</name><styleUrl>#mb_term</styleUrl><description>Opera 5:11–23:02 todos los días</description><Point><coordinates>-66.920000,10.498000,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-I | La Paz (L2) [Origen] → Montalbán–Antímano</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.930000,10.473000,0</coordinates></Point></Placemark>
+    <Placemark><name>MB-J | UD4–UD5 Caricuao [Origen] → Zoológico</name><styleUrl>#mb_term</styleUrl><Point><coordinates>-66.972000,10.451000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- ─────────────────────────────────────────────
+       TRANSCHACAO — 3 rutas documentadas
+       [SOLO TERMINALES]
+       Operador municipal del municipio Chacao
+       6 rutas en total · 104 paradas
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>TransChacao — Municipio Chacao</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Operador municipal del municipio Chacao · 6 rutas, 104 paradas · Zonas: El Bosque, El Rosal, La Castellana, Country Club, Bello Campo, Pedregal · Trayectorias internas no documentadas en fuente primaria disponible</description>
+    <Placemark><name>TC-1 | Pedregal [Origen]</name><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.849000,10.498200,0</coordinates></Point></Placemark>
+    <Placemark><name>TC-1 | Plaza Bolívar de Chacao [Destino]</name><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.854536,10.493031,0</coordinates></Point></Placemark>
+    <Placemark><name>TC-5 | El Rosal / El Bosque [Origen]</name><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.860000,10.492000,0</coordinates></Point></Placemark>
+    <Placemark><name>TC-5 | La Castellana [Destino]</name><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.847000,10.490000,0</coordinates></Point></Placemark>
+    <Placemark><name>TC-6 | El Retiro [Origen]</name><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.845000,10.489500,0</coordinates></Point></Placemark>
+    <Placemark><name>TC-6 | Bello Campo [Destino]</name><styleUrl>#tc_term</styleUrl><Point><coordinates>-66.853000,10.493000,0</coordinates></Point></Placemark>
+  </Folder>
+
+</Document>
+</kml>

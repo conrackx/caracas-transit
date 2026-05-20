@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Líneas Privadas y Busetas — Caracas</name>
+  <description>16 líneas de transporte privado urbano documentadas. Operadores con permisos individuales. No existe plan centralizado de rutas (fuente: TalCual Digital, feb. 2023). Clasificación aplicada: [TRAYECTO POR AVENIDA] cuando la fuente primaria nombra la avenida exacta. [SOLO TERMINALES] cuando solo se conocen los extremos. Nota sobre sentidos: en Caracas la ida y vuelta frecuentemente usan avenidas distintas — documentado en cada descripción donde se conoce.</description>
+
+  <!-- Colores únicos por línea — ver docs/STYLE_GUIDE.md -->
+  <Style id="p01_line"><LineStyle><color>FF0074FF</color><width>3</width></LineStyle></Style>
+  <Style id="p02_line"><LineStyle><color>FF0022FF</color><width>3</width></LineStyle></Style>
+  <Style id="p04_line"><LineStyle><color>FFFFAA00</color><width>3</width></LineStyle></Style>
+  <Style id="p06_line"><LineStyle><color>FFCC0099</color><width>3</width></LineStyle></Style>
+  <Style id="p08_line"><LineStyle><color>FFFF6600</color><width>3</width></LineStyle></Style>
+  <Style id="priv_term"><IconStyle><color>FF0074FF</color><scale>0.85</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/bus.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
+
+  <!-- ─────────────────────────────────────────────
+       P01 — Línea Petare / Ruta 25
+       [TRAYECTO POR AVENIDA] Av. Francisco de Miranda
+       Origen: Av. San Martín / Catia → Destino: Petare
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>P01 — Línea Petare (Ruta 25)</name>
+    <visibility>0</visibility>
+    <description>[TRAYECTO POR AVENIDA] Av. Francisco de Miranda (eje este-oeste). IDA: Av. San Martín → Av. Fuerzas Armadas → Av. Francisco de Miranda → Petare. VUELTA: algunas unidades usan Autopista Fajardo de regreso. Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark>
+      <name>P01 Ruta IDA (Av. Fco. de Miranda)</name>
+      <styleUrl>#p01_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.925000,10.497000,0
+        -66.903000,10.501000,0
+        -66.881407,10.495804,0
+        -66.865000,10.492500,0
+        -66.854536,10.493031,0
+        -66.845000,10.492000,0
+        -66.812000,10.482000,0
+        -66.807223,10.478710,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>P01 | Origen: Av. San Martín / Catia</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><name>P01 | Destino: Petare / Puente Baloa</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.807223,10.478710,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- ─────────────────────────────────────────────
+       P02 — Línea Petare Expreso (Autopista)
+       [TRAYECTO POR AVENIDA] Autopista Fco. Fajardo
+       Sin paradas intermedias · Tarifa mayor
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>P02 — Línea Petare Expreso (Autopista Fajardo)</name>
+    <visibility>0</visibility>
+    <description>[TRAYECTO POR AVENIDA] Autopista Francisco Fajardo. IDA = VUELTA (misma vía). Sin paradas intermedias. Tarifa mayor que la ruta ordinaria. Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark>
+      <name>P02 Ruta Expreso (Autopista)</name>
+      <styleUrl>#p02_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.900000,10.499000,0
+        -66.865000,10.492500,0
+        -66.845000,10.492000,0
+        -66.812000,10.482000,0
+        -66.807223,10.478710,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>P02 | Origen: El Silencio</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.900000,10.499000,0</coordinates></Point></Placemark>
+    <Placemark><name>P02 | Destino: Petare / Puente Baloa</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.807223,10.478710,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- ─────────────────────────────────────────────
+       P03 — Línea Las Minas – Baruta
+       [SOLO TERMINALES] Ruta interior municipio Baruta
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>P03 — Línea Las Minas – Baruta</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Chacaíto → La Trinidad → Santa Fe → El Cafetal → Valle Arriba → Alto Prado → Las Minas (Redoma de Baruta). Ruta interior con paradas no documentadas en fuente primaria disponible. Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark><name>P03 | Origen: Chacaíto</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.865000,10.492500,0</coordinates></Point></Placemark>
+    <Placemark><name>P03 | Destino: Las Minas – Redoma de Baruta</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.847800,10.454500,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- ─────────────────────────────────────────────
+       P04 — Línea UCO (La Vega → Chacaíto)
+       [TRAYECTO POR AVENIDA] Av. San Martín / Lecuna / Casanova
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>P04 — Línea UCO (La Vega → Chacaíto)</name>
+    <visibility>0</visibility>
+    <description>[TRAYECTO POR AVENIDA] Unión Conductores Oeste (UCO). IDA: Los Canjilones → Av. San Martín → Av. Lecuna → Av. Casanova → Chacaíto. VUELTA: puede usar Av. Casanova → Av. Libertador → Av. San Martín. Parada en Redoma La India (frente Galerías Paraíso). Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark>
+      <name>P04 Ruta IDA (Av. San Martín / Lecuna / Casanova)</name>
+      <styleUrl>#p04_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.931000,10.484000,0
+        -66.925000,10.497000,0
+        -66.903000,10.501000,0
+        -66.900000,10.499000,0
+        -66.881407,10.495804,0
+        -66.865000,10.492500,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>P04 | Origen: Los Canjilones, La Vega</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.931000,10.484000,0</coordinates></Point></Placemark>
+    <Placemark><name>P04 | Parada: Redoma La India / Galerías Paraíso</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><name>P04 | Destino: Chacaíto</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.865000,10.492500,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- P05 SOLO TERMINALES -->
+  <Folder>
+    <name>P05 — Línea Catia (La Cota 905)</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Cota 905 → Antímano → Redoma La India → Pérez Bonalde / Catia. Horario: 5:00–16:00. Parada frente a C.C. Galerías Paraíso. Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark><name>P05 | Origen: Cota 905</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.945000,10.478000,0</coordinates></Point></Placemark>
+    <Placemark><name>P05 | Destino: Pérez Bonalde / Catia</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.942000,10.505000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- ─────────────────────────────────────────────
+       P06 — Línea Capitolio / Los Caciques
+       [TRAYECTO POR AVENIDA] Av. J.A. Páez → Quinta Crespo
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>P06 — Línea Capitolio (Los Caciques)</name>
+    <visibility>0</visibility>
+    <description>[TRAYECTO POR AVENIDA] IDA: Redoma La India → Av. José Antonio Páez → Quinta Crespo → Capitolio → El Silencio. VUELTA: puede usar Av. Baralt → Av. Lecuna → Av. Páez. Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark>
+      <name>P06 Ruta IDA (Av. J.A. Páez / Quinta Crespo)</name>
+      <styleUrl>#p06_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.925000,10.497000,0
+        -66.920000,10.495000,0
+        -66.915000,10.496000,0
+        -66.908000,10.497200,0
+        -66.903000,10.499800,0
+        -66.900000,10.499000,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>P06 | Origen: Redoma La India</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><name>P06 | Quinta Crespo</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.915000,10.496000,0</coordinates></Point></Placemark>
+    <Placemark><name>P06 | Destino: El Silencio / Esq. Salas</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.900000,10.499000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- P07 SOLO TERMINALES -->
+  <Folder>
+    <name>P07 — Línea Antímano – Zoológico (La India)</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Redoma La India → Montalbán → Antímano → Metro Zoológico (L2). Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark><name>P07 | Origen: Redoma La India</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><name>P07 | Destino: Zoológico / Metro Caricuao (L2)</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.961000,10.413000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- ─────────────────────────────────────────────
+       P08 — Línea Casalta (Propatria → Chacaíto)
+       [TRAYECTO POR AVENIDA] Av. San Martín
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>P08 — Línea Casalta (Propatria → Chacaíto)</name>
+    <visibility>0</visibility>
+    <description>[TRAYECTO POR AVENIDA] Av. San Martín. IDA: Propatria/Casalta → Chacaíto. VUELTA: puede usar Av. Fuerzas Armadas y Av. San Martín de regreso. Parada en Metrocenter (Av. San Martín). Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark>
+      <name>P08 Ruta IDA (Av. San Martín)</name>
+      <styleUrl>#p08_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.955959,10.504739,0
+        -66.925000,10.497000,0
+        -66.903000,10.501000,0
+        -66.900000,10.499000,0
+        -66.881407,10.495804,0
+        -66.865000,10.492500,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>P08 | Origen: Propatria / Casalta</name><styleUrl>#priv_term</styleUrl><Description>Coord [OSM] tomada de estación Propatria L1 · Wikidata Q6087917</Description><Point><coordinates>-66.955959,10.504739,0</coordinates></Point></Placemark>
+    <Placemark><name>P08 | Parada: Metrocenter / Av. San Martín</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><name>P08 | Destino: Chacaíto</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.865000,10.492500,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- P09–P16 SOLO TERMINALES -->
+  <Folder>
+    <name>P09 — Línea San Agustín (Los Mecedores → El Silencio)</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Los Mecedores → San Agustín → El Silencio. Parada en Metrocenter. Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark><name>P09 | Origen: Los Mecedores</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.945000,10.507000,0</coordinates></Point></Placemark>
+    <Placemark><name>P09 | Destino: El Silencio</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.900000,10.499000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <Folder>
+    <name>P10 — Línea La Pastora – Macaracuay → Petare</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] La Pastora (norte) → Macaracuay → C.C. Plaza Las Américas → Petare. Horario: desde 5:00 am. Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark><name>P10 | Origen: La Pastora</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.890000,10.510000,0</coordinates></Point></Placemark>
+    <Placemark><name>P10 | Destino: Petare</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.807223,10.478710,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <Folder>
+    <name>P11 — Línea El Paraíso – La India (Av. Baralt)</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Av. Baralt → El Calvario → El Paraíso → Redoma La India. Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark><name>P11 | Origen: Av. Baralt</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.896000,10.492000,0</coordinates></Point></Placemark>
+    <Placemark><name>P11 | Destino: Redoma La India</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <Folder>
+    <name>P12 — Línea Sabana de Blanco (Av. Baralt → Cotiza)</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Av. Baralt → Cotiza → Av. Panteón → Sabana de Blanco. Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark><name>P12 | Origen: Av. Baralt</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.896000,10.492000,0</coordinates></Point></Placemark>
+    <Placemark><name>P12 | Destino: Sabana de Blanco (norte)</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.885000,10.520000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <Folder>
+    <name>P13 — Línea Carabobo–Tiuna (Plaza Venezuela → La Rinconada)</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Plaza Cipriano Castro → Los Símbolos → Autopista Valle-Coche → Fuerte Tiuna → La Rinconada (Ferroviaria). Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark><name>P13 | Origen: Plaza Venezuela (Pza. Cipriano Castro)</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+    <Placemark><name>P13 | Destino: La Rinconada / Ferroviaria</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.936409,10.434658,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <Folder>
+    <name>P14 — Línea Chacao–PV (Av. Teherán → Plaza Venezuela)</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Av. Teherán (Redoma La India) → Chacao → Chacaíto → Plaza Venezuela. Parada al inicio de la Av. Teherán sentido este. Fuente: TalCual Digital feb. 2023.</description>
+    <Placemark><name>P14 | Origen: Redoma La India, Av. Teherán</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.925000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><name>P14 | Destino: Plaza Venezuela</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <Folder>
+    <name>P15 — Línea Fuerte Tiuna – La Bandera</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Fuerte Tiuna → Av. Nueva Granada → La Bandera. Complementa el corredor de L3.</description>
+    <Placemark><name>P15 | Origen: Fuerte Tiuna</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.914800,10.462400,0</coordinates></Point></Placemark>
+    <Placemark><name>P15 | Destino: Terminal La Bandera</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.902000,10.476000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <Folder>
+    <name>P16 — Línea Cotiza – Centro (La Pastora → El Silencio)</name>
+    <visibility>0</visibility>
+    <description>[SOLO TERMINALES] Cotiza / La Pastora (norte) → Av. Urdaneta → Capitolio → El Silencio. Fuente: Moovit / TalCual Digital.</description>
+    <Placemark><name>P16 | Origen: Cotiza / La Pastora norte</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.880000,10.520000,0</coordinates></Point></Placemark>
+    <Placemark><name>P16 | Destino: El Silencio / Capitolio</name><styleUrl>#priv_term</styleUrl><Point><coordinates>-66.900000,10.499000,0</coordinates></Point></Placemark>
+  </Folder>
+
+</Document>
+</kml>

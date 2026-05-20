@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Transporte Urbano — Caracas</name>
+  <description>Indice maestro. Carga cada capa desde data/ via NetworkLink. Para editar datos, modificar el archivo correspondiente en data/ — no este archivo. Ver docs/STYLE_GUIDE.md y docs/SOURCES.md.</description>
+
+  <NetworkLink>
+    <name>Metro de Caracas (L1-L5)</name>
+    <visibility>1</visibility>
+    <Link>
+      <href>https://raw.githubusercontent.com/conrackx/caracas-transit/master/data/metro.kml</href>
+      <refreshMode>onInterval</refreshMode>
+      <refreshInterval>86400</refreshInterval>
+    </Link>
+  </NetworkLink>
+
+  <NetworkLink>
+    <name>Sistemas Masivos Integrados</name>
+    <visibility>1</visibility>
+    <Link>
+      <href>https://raw.githubusercontent.com/conrackx/caracas-transit/master/data/sistemas_masivos.kml</href>
+      <refreshMode>onInterval</refreshMode>
+      <refreshInterval>86400</refreshInterval>
+    </Link>
+  </NetworkLink>
+
+  <NetworkLink>
+    <name>Terminales y Nodos Intermodales</name>
+    <visibility>1</visibility>
+    <Link>
+      <href>https://raw.githubusercontent.com/conrackx/caracas-transit/master/data/terminales.kml</href>
+      <refreshMode>onInterval</refreshMode>
+      <refreshInterval>86400</refreshInterval>
+    </Link>
+  </NetworkLink>
+
+  <NetworkLink>
+    <name>Sistemas Regionales Conectados</name>
+    <visibility>0</visibility>
+    <Link>
+      <href>https://raw.githubusercontent.com/conrackx/caracas-transit/master/data/sistemas_regionales.kml</href>
+      <refreshMode>onInterval</refreshMode>
+      <refreshInterval>86400</refreshInterval>
+    </Link>
+  </NetworkLink>
+
+  <NetworkLink>
+    <name>Transporte Complementario</name>
+    <visibility>0</visibility>
+    <Link>
+      <href>https://raw.githubusercontent.com/conrackx/caracas-transit/master/data/transporte_complementario.kml</href>
+      <refreshMode>onInterval</refreshMode>
+      <refreshInterval>86400</refreshInterval>
+    </Link>
+  </NetworkLink>
+
+  <NetworkLink>
+    <name>Lineas Privadas y Busetas</name>
+    <visibility>0</visibility>
+    <Link>
+      <href>https://raw.githubusercontent.com/conrackx/caracas-transit/master/data/lineas_privadas.kml</href>
+      <refreshMode>onInterval</refreshMode>
+      <refreshInterval>86400</refreshInterval>
+    </Link>
+  </NetworkLink>
+
+</Document>
+</kml>

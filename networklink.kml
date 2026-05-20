@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<NetworkLink>
+  <name>Transporte Urbano — Caracas</name>
+  <description>Punto de entrada para Google Earth. Descarga este archivo una sola vez. Google Earth se sincronizara automaticamente con el repositorio cada 24 horas sin necesidad de reimportar. Ver instrucciones en README.md.</description>
+  <Link>
+    <href>https://raw.githubusercontent.com/conrackx/caracas-transit/master/caracas_transporte.kml</href>
+    <refreshMode>onInterval</refreshMode>
+    <refreshInterval>86400</refreshInterval>
+  </Link>
+</NetworkLink>
+</kml>

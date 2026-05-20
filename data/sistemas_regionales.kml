@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Sistemas Regionales Conectados</name>
+  <description>Metro de Los Teques y Ferrocarril Valles del Tuy. Ambos conectan con el Metro de Caracas y sirven el área metropolitana extendida. Ocultos por defecto — activar en el panel de capas.</description>
+
+  <!-- Metro Los Teques Gris-azul #446688 -->
+  <Style id="teques_line"><LineStyle><color>FF886644</color><width>4</width></LineStyle></Style>
+  <Style id="teques_stop"><IconStyle><color>FF886644</color><scale>0.65</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.6</scale></LabelStyle></Style>
+
+  <!-- Ferrocarril IFE Marrón #AA4422 -->
+  <Style id="ffe_line"><LineStyle><color>FF2244AA</color><width>4</width></LineStyle></Style>
+  <Style id="ffe_stop"><IconStyle><color>FF2244AA</color><scale>0.7</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
+
+  <!-- ─────────────────────────────────────────────
+       METRO DE LOS TEQUES
+       4 estaciones operativas · Inaugurado 3 nov 2006
+       Conecta Las Adjuntas (L2) con Los Teques, cap. edo. Miranda
+       Operador: C.A. Metro de Los Teques
+       Todas las coordenadas son estimadas [~]
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>Metro de Los Teques — Las Adjuntas ↔ Independencia</name>
+    <visibility>0</visibility>
+    <description>4 estaciones operativas · Inaugurado parcialmente 3 nov 2006 · Conecta con L2 en Las Adjuntas · Operador: C.A. Metro de Los Teques · Fuente: es.wikipedia.org/wiki/Metro_de_Los_Teques · Coordenadas estimadas [~]</description>
+    <Placemark>
+      <name>Metro Los Teques Trayecto [~]</name>
+      <styleUrl>#teques_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.981000,10.395000,0
+        -67.003000,10.370000,0
+        -67.012000,10.355000,0
+        -67.021000,10.343000,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>MLT·01 Las Adjuntas [TRANSBORDO L2][~]</name><styleUrl>#teques_stop</styleUrl><description>Estación compartida con L2 del Metro de Caracas · Ver también data/metro.kml L2·13</description><Point><coordinates>-66.981000,10.395000,0</coordinates></Point></Placemark>
+    <Placemark><name>MLT·02 Alí Primera [~]</name><styleUrl>#teques_stop</styleUrl><description>Antes llamada El Tambor · Primera extensión sin paradas intermedias desde Las Adjuntas · Inaugurada 3 nov 2006</description><Point><coordinates>-67.003000,10.370000,0</coordinates></Point></Placemark>
+    <Placemark><name>MLT·03 Guaicaipuro [~]</name><styleUrl>#teques_stop</styleUrl><Point><coordinates>-67.012000,10.355000,0</coordinates></Point></Placemark>
+    <Placemark><name>MLT·04 Independencia [TERMINAL][~]</name><styleUrl>#teques_stop</styleUrl><description>Terminal Los Teques · Ciudad de Los Teques, capital del estado Miranda</description><Point><coordinates>-67.021000,10.343000,0</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- ─────────────────────────────────────────────
+       FERROCARRIL VALLES DEL TUY (IFE)
+       La Rinconada → Charallave → Cúa
+       Conecta con L3 en La Rinconada
+       Operador: Instituto de Ferrocarriles del Estado (IFE)
+       Coordenadas estimadas [~] salvo La Rinconada [OSM]
+  ───────────────────────────────────────────── -->
+  <Folder>
+    <name>Ferrocarril Valles del Tuy (IFE) — La Rinconada ↔ Cúa</name>
+    <visibility>0</visibility>
+    <description>Sistema Ferroviario Central (IFE) · La Rinconada (Caracas) → Charallave → Cúa (estado Miranda) · Conecta con Metro L3 en La Rinconada · Fuente: es.wikipedia.org/wiki/Tren_de_los_Valles_del_Tuy</description>
+    <Placemark>
+      <name>Ferrocarril Trayecto La Rinconada–Cúa [OSM+~]</name>
+      <styleUrl>#ffe_line</styleUrl>
+      <LineString><tessellate>1</tessellate><coordinates>
+        -66.936409,10.434658,0
+        -66.910000,10.340000,0
+        -66.892000,10.264000,0
+        -66.876000,10.159000,0
+      </coordinates></LineString>
+    </Placemark>
+    <Placemark><name>FFE La Rinconada [TRANSBORDO L3][OSM]</name><styleUrl>#ffe_stop</styleUrl><description>Estación compartida con Metro L3 · Wikidata Q5965109</description><Point><coordinates>-66.936409,10.434658,0</coordinates></Point></Placemark>
+    <Placemark><name>FFE Charallave [~]</name><styleUrl>#ffe_stop</styleUrl><description>Ciudad de Charallave · Municipio Cristóbal Rojas · Estado Miranda</description><Point><coordinates>-66.892000,10.264000,0</coordinates></Point></Placemark>
+    <Placemark><name>FFE Cúa [TERMINAL][~]</name><styleUrl>#ffe_stop</styleUrl><description>Terminal Cúa · Ciudad de Cúa · Municipio Urdaneta · Estado Miranda</description><Point><coordinates>-66.876000,10.159000,0</coordinates></Point></Placemark>
+  </Folder>
+
+</Document>
+</kml>

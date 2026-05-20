@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Terminales y Nodos Intermodales — Caracas</name>
+  <description>Terminales interurbanos, terminales urbanos y nodos informales clave de transferencia en el área metropolitana de Caracas.</description>
+
+  <!-- Terminales mayores -->
+  <Style id="hub_mayor"><IconStyle><scale>1.2</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href></Icon></IconStyle><LabelStyle><scale>0.85</scale></LabelStyle></Style>
+  <!-- Nodos menores / informales -->
+  <Style id="hub_menor"><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-stars.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
+
+  <Folder>
+    <name>Terminales Interurbanos</name>
+    <visibility>1</visibility>
+
+    <Placemark>
+      <name>Terminal La Bandera — Interurbano Occidente</name>
+      <styleUrl>#hub_mayor</styleUrl>
+      <description>Terminal de pasajeros interurbano. Rutas a Maracay, Valencia, Mérida, Táchira, Colombia. Operador: SITSSA. Conexión Metro L3 (est. La Bandera). Estado: Operativo.</description>
+      <Point><coordinates>-66.902000,10.476000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Terminal de Oriente — Antonio J. de Sucre (TDO)</name>
+      <styleUrl>#hub_mayor</styleUrl>
+      <description>Terminal interurbano oriente. Rutas a Anzoátegui, Sucre, Bolívar, Colombia, Brasil. Operador: SITSSA. Km 1 Autopista Caracas–Guarenas. Estado: Operativo.</description>
+      <Point><coordinates>-66.772100,10.498200,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Ferroviaria La Rinconada — Tren Valles del Tuy (IFE)</name>
+      <styleUrl>#hub_mayor</styleUrl>
+      <description>Estación Libertador Simón Bolívar del IFE. Trenes a Charallave y Cúa (estado Miranda). Integrado con Metro L3. Coord [OSM]: Wikidata Q5965109.</description>
+      <Point><coordinates>-66.936409,10.434658,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <Folder>
+    <name>Terminales Urbanos</name>
+    <visibility>1</visibility>
+
+    <Placemark>
+      <name>Terminal Plaza Venezuela — 28 líneas urbanas</name>
+      <styleUrl>#hub_mayor</styleUrl>
+      <description>Inaugurado julio 2025. 6 andenes organizados por destino: andén 1 Los Teques; andén 2 El Valle / Coche / La Rinconada; andén 3 Antímano / Las Adjuntas / Macarao; andén 4 La Vega / El Junquito; andén 5 UCV / Santa Rosalía; andén 6 Chacao / Petare / Baruta / Las Mercedes. Coord [OSM]: Wikidata Q5147237.</description>
+      <Point><coordinates>-66.881407,10.495804,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <Folder>
+    <name>Nodos Informales Clave</name>
+    <visibility>1</visibility>
+
+    <Placemark>
+      <name>Nodo Redoma La India — 5 líneas privadas</name>
+      <styleUrl>#hub_menor</styleUrl>
+      <description>Nodo privado informal más activo del corredor oeste. Confluyen: P04 UCO (La Vega), P05 La Cota (Catia), P06 Los Caciques (Capitolio), P07 La India (Zoológico), P14 Chacao–PV. Avenidas: J.A. Páez / O'Higgins / Teherán / Av. La Vega. Activo desde las 5:00 am.</description>
+      <Point><coordinates>-66.925000,10.497000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Nodo Metrocenter / Av. San Martín — corredor oeste</name>
+      <styleUrl>#hub_menor</styleUrl>
+      <description>C.C. Metrocenter. Paradas de líneas: P01 Petare, P04 UCO, P08 Casalta–Chacaíto, P09 San Agustín–El Silencio y otras. Principal nodo de busetas del corredor oeste.</description>
+      <Point><coordinates>-66.925000,10.497000,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Nodo Las Adjuntas — Metro L2 + Los Teques</name>
+      <styleUrl>#hub_menor</styleUrl>
+      <description>Terminal SW de L2. Transbordo a Metro Los Teques. Patio de maniobras para mantenimiento de L2 y L4.</description>
+      <Point><coordinates>-66.981000,10.395000,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+</Document>
+</kml>

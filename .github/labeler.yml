@@ -1,0 +1,32 @@
+data:
+  - changed-files:
+      - any-glob-to-any-file: data/*.kml
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file: docs/*.md
+
+subagent:
+  - changed-files:
+      - any-glob-to-any-file: .opencode/agent/*.md
+
+config:
+  - changed-files:
+      - any-glob-to-any-file: config/*
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file: .github/workflows/*
+
+scripts:
+  - changed-files:
+      - any-glob-to-any-file: scripts/*
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file: package.json
+      - any-glob-to-any-file: package-lock.json
+
+kml:
+  - changed-files:
+      - any-glob-to-any-file: '**/*.kml'
