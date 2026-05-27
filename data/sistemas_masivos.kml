@@ -118,6 +118,7 @@
         -66.892400,10.485800,0
       </coordinates></LineString>
     </Placemark>
+<<<<<<< HEAD
     <Placemark><name>L7·01 Los Ilustres [TERMINAL][~]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.930600,10.514800,0</coordinates></Point></Placemark>
     <Placemark><name>L7·02 Marín [~]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.922800,10.505200,0</coordinates></Point></Placemark>
     <Placemark><name>L7·03 El Cementerio [~]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.918900,10.500400,0</coordinates></Point></Placemark>
@@ -126,6 +127,16 @@
     <Placemark><name>L7·06 Puerta Caracas [TRANSBORDO L1 Caño Amarillo][~]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.899400,10.494000,0</coordinates></Point></Placemark>
     <Placemark><name>L7·07 El Silencio [TRANSBORDO L1 L2][~]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.895900,10.490000,0</coordinates></Point></Placemark>
     <Placemark><name>L7·08 Las Flores [TERMINAL][~]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.892400,10.485800,0</coordinates></Point></Placemark>
+=======
+    <Placemark><name>L7·01 Los Ilustres [TERMINAL]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.930600,10.514800,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·02 Marín</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.922800,10.505200,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·03 El Cementerio</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.918900,10.500400,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·04 Simón Rodríguez</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.915000,10.495600,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·05 Fuerzas Armadas [TRANSBORDO L1 La Hoyada]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.907200,10.493200,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·06 Puerta Caracas [TRANSBORDO L1 Caño Amarillo]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.899400,10.494000,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·07 El Silencio [TRANSBORDO L1 L2]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.895900,10.490000,0</coordinates></Point></Placemark>
+    <Placemark><name>L7·08 Las Flores [TERMINAL]</name><styleUrl>#brt_stop</styleUrl><Point><coordinates>-66.892400,10.485800,0</coordinates></Point></Placemark>
+>>>>>>> 56cf9df5394d455d6405427d8bb5fc0aa93d5a0d
   </Folder>
 
 </Document>
