@@ -7,10 +7,12 @@
   <!-- Metro Los Teques Gris-azul #446688 -->
   <Style id="teques_line"><LineStyle><color>FF886644</color><width>4</width></LineStyle></Style>
   <Style id="teques_stop"><IconStyle><color>FF886644</color><scale>0.65</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.6</scale></LabelStyle></Style>
+  <Style id="teques_term"><IconStyle><color>FF886644</color><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
 
   <!-- Ferrocarril IFE Marrón #AA4422 -->
   <Style id="ffe_line"><LineStyle><color>FF2244AA</color><width>4</width></LineStyle></Style>
   <Style id="ffe_stop"><IconStyle><color>FF2244AA</color><scale>0.7</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
+  <Style id="ffe_term"><IconStyle><color>FF2244AA</color><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
 
   <!-- ─────────────────────────────────────────────
        METRO DE LOS TEQUES
@@ -36,7 +38,7 @@
     <Placemark><name>MLT·01 Las Adjuntas [TRANSBORDO L2][~]</name><styleUrl>#teques_stop</styleUrl><description>Estación compartida con L2 del Metro de Caracas · Ver también data/metro.kml L2·13</description><Point><coordinates>-66.981000,10.395000,0</coordinates></Point></Placemark>
     <Placemark><name>MLT·02 Alí Primera [~]</name><styleUrl>#teques_stop</styleUrl><description>Antes llamada El Tambor · Primera extensión sin paradas intermedias desde Las Adjuntas · Inaugurada 3 nov 2006</description><Point><coordinates>-67.003000,10.370000,0</coordinates></Point></Placemark>
     <Placemark><name>MLT·03 Guaicaipuro [~]</name><styleUrl>#teques_stop</styleUrl><Point><coordinates>-67.012000,10.355000,0</coordinates></Point></Placemark>
-    <Placemark><name>MLT·04 Independencia [TERMINAL][~]</name><styleUrl>#teques_stop</styleUrl><description>Terminal Los Teques · Ciudad de Los Teques, capital del estado Miranda</description><Point><coordinates>-67.021000,10.343000,0</coordinates></Point></Placemark>
+    <Placemark><name>MLT·04 Independencia [TERMINAL][~]</name><styleUrl>#teques_term</styleUrl><description>Terminal Los Teques · Ciudad de Los Teques, capital del estado Miranda</description><Point><coordinates>-67.021000,10.343000,0</coordinates></Point></Placemark>
   </Folder>
 
   <!-- ─────────────────────────────────────────────
@@ -62,7 +64,7 @@
     </Placemark>
     <Placemark><name>FFE La Rinconada [TRANSBORDO L3][OSM]</name><styleUrl>#ffe_stop</styleUrl><description>Estación compartida con Metro L3 · Wikidata Q5965109</description><Point><coordinates>-66.936409,10.434658,0</coordinates></Point></Placemark>
     <Placemark><name>FFE Charallave [~]</name><styleUrl>#ffe_stop</styleUrl><description>Ciudad de Charallave · Municipio Cristóbal Rojas · Estado Miranda</description><Point><coordinates>-66.892000,10.264000,0</coordinates></Point></Placemark>
-    <Placemark><name>FFE Cúa [TERMINAL][~]</name><styleUrl>#ffe_stop</styleUrl><description>Terminal Cúa · Ciudad de Cúa · Municipio Urdaneta · Estado Miranda</description><Point><coordinates>-66.876000,10.159000,0</coordinates></Point></Placemark>
+    <Placemark><name>FFE Cúa [TERMINAL][~]</name><styleUrl>#ffe_term</styleUrl><description>Terminal Cúa · Ciudad de Cúa · Municipio Urdaneta · Estado Miranda</description><Point><coordinates>-66.876000,10.159000,0</coordinates></Point></Placemark>
   </Folder>
 
 </Document>

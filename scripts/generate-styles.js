@@ -85,7 +85,7 @@ function generateStyleXml(key, style, scales) {
       `</Style>`
     );
   } else if (isMetroLine) {
-    // Other metro lines (L2-L5): line + terminal + stop
+    // Other metro lines (L2-L5): line + terminal + stop + xfer
     styles.push(
       `  <Style id="${key}_line">` +
       `<LineStyle><color>${style.color_kml}</color><width>${style.width_line}</width></LineStyle>` +
@@ -105,8 +105,18 @@ function generateStyleXml(key, style, scales) {
       `<LabelStyle><scale>${scales.label_stop}</scale></LabelStyle>` +
       `</Style>`
     );
+    // Transfer style for L2, L3, L4 (not L5 single station)
+    if (['l2', 'l3', 'l4'].includes(key)) {
+      styles.push(
+        `  <Style id="${key}_xfer">` +
+        `<IconStyle><color>FFFFFFFF</color><scale>${scales.xfer}</scale>` +
+        `<Icon><href>${style.icon}</href></Icon></IconStyle>` +
+        `<LabelStyle><scale>${scales.label_xfer}</scale></LabelStyle>` +
+        `</Style>`
+      );
+    }
   } else if (isLineWithWidth) {
-    // Cable, CT, BRT, teques, ffe: line + stop
+    // Cable, CT, BRT, teques, ffe: line + stop + term
     styles.push(
       `  <Style id="${key}_line">` +
       `<LineStyle><color>${style.color_kml}</color><width>${style.width_line}</width></LineStyle>` +
@@ -117,6 +127,13 @@ function generateStyleXml(key, style, scales) {
       `<IconStyle><color>${style.color_kml}</color><scale>0.7</scale>` +
       `<Icon><href>${style.icon}</href></Icon></IconStyle>` +
       `<LabelStyle><scale>0.6</scale></LabelStyle>` +
+      `</Style>`
+    );
+    styles.push(
+      `  <Style id="${key}_term">` +
+      `<IconStyle><color>${style.color_kml}</color><scale>${scales.terminal}</scale>` +
+      `<Icon><href>${style.icon}</href></Icon></IconStyle>` +
+      `<LabelStyle><scale>${scales.label_terminal}</scale></LabelStyle>` +
       `</Style>`
     );
   } else {
@@ -194,11 +211,11 @@ function main() {
           if (key === 'l1') {
             fileStyles.push('l1', 'l1_n', 'l1_h', 'l1_term', 'l1_stop', 'l1_xfer');
           } else if (['l2', 'l3', 'l4'].includes(key)) {
-            fileStyles.push(`${key}_line`, `${key}_term`, `${key}_stop`);
+            fileStyles.push(`${key}_line`, `${key}_term`, `${key}_stop`, `${key}_xfer`);
           } else if (key === 'l5') {
             fileStyles.push(`${key}_stop`);
           } else if (['cable', 'ct', 'brt', 'teques', 'ffe'].includes(key)) {
-            fileStyles.push(`${key}_line`, `${key}_stop`);
+            fileStyles.push(`${key}_line`, `${key}_stop`, `${key}_term`);
           } else if (['mb', 'tc'].includes(key)) {
             fileStyles.push(`${key}_term`);
           } else if (key.startsWith('p')) {

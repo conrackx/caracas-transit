@@ -250,11 +250,11 @@ function validateStyleIds(content, filename, config) {
       if (key === 'l1') {
         expectedIds.push('l1', 'l1_n', 'l1_h', 'l1_term', 'l1_stop', 'l1_xfer');
       } else if (['l2', 'l3', 'l4'].includes(key)) {
-        expectedIds.push(`${key}_line`, `${key}_term`, `${key}_stop`);
+        expectedIds.push(`${key}_line`, `${key}_term`, `${key}_stop`, `${key}_xfer`);
       } else if (key === 'l5') {
         expectedIds.push(`${key}_stop`);
       } else if (['cable', 'ct', 'brt', 'teques', 'ffe'].includes(key)) {
-        expectedIds.push(`${key}_line`, `${key}_stop`);
+        expectedIds.push(`${key}_line`, `${key}_stop`, `${key}_term`);
       } else if (['mb', 'tc'].includes(key)) {
         expectedIds.push(`${key}_term`);
       } else if (key.startsWith('p')) {

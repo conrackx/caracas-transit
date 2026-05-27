@@ -26,11 +26,22 @@ El formato KML es `AABBGGRR` (alpha-blue-green-red, en ese orden).
 | BusCaracas / L7 | `#CC2222` (rojo) | `FF2222CC` | 4 |
 | Metrobús | `#CC6600` (naranja suave) | `FF0066CC` | 3 |
 | TransChacao | `#008080` (turquesa) | `FF808000` | 3 |
-| Líneas privadas (P01) | `#FF7400` | `FF0074FF` | 3 |
+| Líneas privadas (P01) | `#D35400` | `FF0054D3` | 3 |
 | Líneas privadas (P02) | `#FF2200` | `FF0022FF` | 3 |
+| Líneas privadas (P03) | `#1ABC9C` | `FF9CBC1A` | 3 |
 | Líneas privadas (P04) | `#00AAFF` | `FFFFAA00` | 3 |
+| Líneas privadas (P05) | `#E74C3C` | `FF3C4CE7` | 3 |
 | Líneas privadas (P06) | `#9900CC` | `FFCC0099` | 3 |
+| Líneas privadas (P07) | `#3498DB` | `FFDB9834` | 3 |
 | Líneas privadas (P08) | `#0066FF` | `FFFF6600` | 3 |
+| Líneas privadas (P09) | `#9B59B6` | `FFB6599B` | 3 |
+| Líneas privadas (P10) | `#F1C40F` | `FF0FC4F1` | 3 |
+| Líneas privadas (P11) | `#2ECC71` | `FF71CC2E` | 3 |
+| Líneas privadas (P12) | `#34495E` | `FF5E4934` | 3 |
+| Líneas privadas (P13) | `#E67E22` | `FF227EE6` | 3 |
+| Líneas privadas (P14) | `#1A5276` | `FF76521A` | 3 |
+| Líneas privadas (P15) | `#7D3C98` | `FF983C7D` | 3 |
+| Líneas privadas (P16) | `#A93226` | `FF2632A9` | 3 |
 
 ---
 

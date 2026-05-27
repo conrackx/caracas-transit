@@ -19,16 +19,19 @@
   <Style id="l2_line"><LineStyle><color>FF00A8F5</color><width>5</width></LineStyle></Style>
   <Style id="l2_term"><IconStyle><color>FF00A8F5</color><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
   <Style id="l2_stop"><IconStyle><color>FF00A8F5</color><scale>0.6</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.55</scale></LabelStyle></Style>
+  <Style id="l2_xfer"><IconStyle><color>FFFFFFFF</color><scale>0.85</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.7</scale></LabelStyle></Style>
 
   <!-- L3 Azul #0060AF -->
   <Style id="l3_line"><LineStyle><color>FFAF6000</color><width>5</width></LineStyle></Style>
   <Style id="l3_term"><IconStyle><color>FFAF6000</color><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
   <Style id="l3_stop"><IconStyle><color>FFAF6000</color><scale>0.6</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.55</scale></LabelStyle></Style>
+  <Style id="l3_xfer"><IconStyle><color>FFFFFFFF</color><scale>0.85</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.7</scale></LabelStyle></Style>
 
   <!-- L4 Verde #007F3F -->
   <Style id="l4_line"><LineStyle><color>FF3F7F00</color><width>5</width></LineStyle></Style>
   <Style id="l4_term"><IconStyle><color>FF3F7F00</color><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.75</scale></LabelStyle></Style>
   <Style id="l4_stop"><IconStyle><color>FF3F7F00</color><scale>0.6</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.55</scale></LabelStyle></Style>
+  <Style id="l4_xfer"><IconStyle><color>FFFFFFFF</color><scale>0.85</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.7</scale></LabelStyle></Style>
 
   <!-- L5 Morado #8B008B -->
   <Style id="l5_stop"><IconStyle><color>FF8B008B</color><scale>0.8</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle><LabelStyle><scale>0.7</scale></LabelStyle></Style>
@@ -116,7 +119,7 @@
       </coordinates></LineString>
     </Placemark>
     <Placemark><name>L2·01 El Silencio [TERMINAL][TRANSBORDO L1][~]</name><styleUrl>#l2_term</styleUrl><description>Terminal NE · Transbordo a L1 (estación Capitolio, adyacente)</description><Point><coordinates>-66.900000,10.499000,0</coordinates></Point></Placemark>
-    <Placemark><name>L2·02 Capuchinos [TRANSBORDO L4][~]</name><styleUrl>#l2_stop</styleUrl><description>Inaugurada: 6 nov 1988 · Transbordo a L4</description><Point><coordinates>-66.907000,10.494000,0</coordinates></Point></Placemark>
+    <Placemark><name>L2·02 Capuchinos [TRANSBORDO L4][~]</name><styleUrl>#l2_xfer</styleUrl><description>Inaugurada: 6 nov 1988 · Transbordo a L4</description><Point><coordinates>-66.907000,10.494000,0</coordinates></Point></Placemark>
     <Placemark><name>L2·03 Maternidad [~]</name><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.913000,10.487000,0</coordinates></Point></Placemark>
     <Placemark><name>L2·04 Artigas [~]</name><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.921000,10.480000,0</coordinates></Point></Placemark>
     <Placemark><name>L2·05 La Paz [~]</name><styleUrl>#l2_stop</styleUrl><Point><coordinates>-66.930000,10.473000,0</coordinates></Point></Placemark>
@@ -154,7 +157,7 @@
         -66.936409,10.434658,0
       </coordinates></LineString>
     </Placemark>
-    <Placemark><name>L3·01 Plaza Venezuela [TRANSBORDO L1 L4][OSM]</name><styleUrl>#l3_stop</styleUrl><description>Nodo central · Transbordo a L1 y L4 · Wikidata Q5147237</description><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
+    <Placemark><name>L3·01 Plaza Venezuela [TRANSBORDO L1 L4][OSM]</name><styleUrl>#l3_xfer</styleUrl><description>Nodo central · Transbordo a L1 y L4 · Wikidata Q5147237</description><Point><coordinates>-66.881407,10.495804,0</coordinates></Point></Placemark>
     <Placemark><name>L3·02 Ciudad Universitaria [OSM]</name><styleUrl>#l3_stop</styleUrl><description>Inaugurada: 18 dic 1994 · Campus UCV (Patrimonio Mundial UNESCO) · Wikidata Q5770721</description><Point><coordinates>-66.889163,10.488064,0</coordinates></Point></Placemark>
     <Placemark><name>L3·03 Los Símbolos [OSM]</name><styleUrl>#l3_stop</styleUrl><description>Inaugurada: 18 dic 1994 · Wikidata Q5980417</description><Point><coordinates>-66.895170,10.483779,0</coordinates></Point></Placemark>
     <Placemark><name>L3·04 La Bandera [~]</name><styleUrl>#l3_stop</styleUrl><description>Inaugurada: 18 dic 1994 · Cercana al Terminal La Bandera (Occidente)</description><Point><coordinates>-66.902000,10.476000,0</coordinates></Point></Placemark>
@@ -187,7 +190,7 @@
       </coordinates></LineString>
     </Placemark>
     <Placemark><name>L4·01 Zona Rental [TERMINAL][TRANSBORDO L1 L3][OSM]</name><styleUrl>#l4_term</styleUrl><description>Inaugurada: 18 jul 2006 · Transbordo a L1 y L3 · Wikidata Q6171599</description><Point><coordinates>-66.882946,10.495107,0</coordinates></Point></Placemark>
-    <Placemark><name>L4·02 Parque Central [TRANSBORDO MC1][~]</name><styleUrl>#l4_stop</styleUrl><description>Inaugurada: 18 jul 2006 · Conexión con Metrocable MC1 (San Agustín del Sur)</description><Point><coordinates>-66.892000,10.497000,0</coordinates></Point></Placemark>
+    <Placemark><name>L4·02 Parque Central [TRANSBORDO MC1][~]</name><styleUrl>#l4_xfer</styleUrl><description>Inaugurada: 18 jul 2006 · Conexión con Metrocable MC1 (San Agustín del Sur)</description><Point><coordinates>-66.892000,10.497000,0</coordinates></Point></Placemark>
     <Placemark><name>L4·03 Nuevo Circo [~]</name><styleUrl>#l4_stop</styleUrl><description>Inaugurada: 18 jul 2006</description><Point><coordinates>-66.900000,10.498500,0</coordinates></Point></Placemark>
     <Placemark><name>L4·04 Teatros [~]</name><styleUrl>#l4_stop</styleUrl><description>Inaugurada: 18 jul 2006</description><Point><coordinates>-66.905000,10.496000,0</coordinates></Point></Placemark>
     <Placemark><name>L4·05 Capuchinos [TERMINAL][TRANSBORDO L2][~]</name><styleUrl>#l4_term</styleUrl><description>Terminal oeste L4 · Transbordo a L2 · Los trenes continúan sobre el tramo físico L2 hacia Las Adjuntas o Zoológico</description><Point><coordinates>-66.907000,10.494000,0</coordinates></Point></Placemark>

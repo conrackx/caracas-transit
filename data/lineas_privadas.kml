@@ -4,13 +4,24 @@
   <name>Líneas Privadas y Busetas — Caracas</name>
   <description>16 líneas de transporte privado urbano documentadas. Operadores con permisos individuales. No existe plan centralizado de rutas (fuente: TalCual Digital, feb. 2023). Clasificación aplicada: [TRAYECTO POR AVENIDA] cuando la fuente primaria nombra la avenida exacta. [SOLO TERMINALES] cuando solo se conocen los extremos. Nota sobre sentidos: en Caracas la ida y vuelta frecuentemente usan avenidas distintas — documentado en cada descripción donde se conoce.</description>
 
-  <!-- Colores únicos por línea — ver docs/STYLE_GUIDE.md -->
-  <Style id="p01_line"><LineStyle><color>FF0074FF</color><width>3</width></LineStyle></Style>
+  <!-- Colores únicos por línea — ver config/styles.yaml -->
+  <Style id="p01_line"><LineStyle><color>FF0054D3</color><width>3</width></LineStyle></Style>
   <Style id="p02_line"><LineStyle><color>FF0022FF</color><width>3</width></LineStyle></Style>
+  <Style id="p03_line"><LineStyle><color>FF9CBC1A</color><width>3</width></LineStyle></Style>
   <Style id="p04_line"><LineStyle><color>FFFFAA00</color><width>3</width></LineStyle></Style>
+  <Style id="p05_line"><LineStyle><color>FF3C4CE7</color><width>3</width></LineStyle></Style>
   <Style id="p06_line"><LineStyle><color>FFCC0099</color><width>3</width></LineStyle></Style>
+  <Style id="p07_line"><LineStyle><color>FFDB9834</color><width>3</width></LineStyle></Style>
   <Style id="p08_line"><LineStyle><color>FFFF6600</color><width>3</width></LineStyle></Style>
-  <Style id="priv_term"><IconStyle><color>FF0074FF</color><scale>0.85</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/bus.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
+  <Style id="p09_line"><LineStyle><color>FFB6599B</color><width>3</width></LineStyle></Style>
+  <Style id="p10_line"><LineStyle><color>FF0FC4F1</color><width>3</width></LineStyle></Style>
+  <Style id="p11_line"><LineStyle><color>FF71CC2E</color><width>3</width></LineStyle></Style>
+  <Style id="p12_line"><LineStyle><color>FF5E4934</color><width>3</width></LineStyle></Style>
+  <Style id="p13_line"><LineStyle><color>FF227EE6</color><width>3</width></LineStyle></Style>
+  <Style id="p14_line"><LineStyle><color>FF76521A</color><width>3</width></LineStyle></Style>
+  <Style id="p15_line"><LineStyle><color>FF983C7D</color><width>3</width></LineStyle></Style>
+  <Style id="p16_line"><LineStyle><color>FF2632A9</color><width>3</width></LineStyle></Style>
+  <Style id="priv_term"><IconStyle><color>FF444444</color><scale>0.85</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/bus.png</href></Icon></IconStyle><LabelStyle><scale>0.65</scale></LabelStyle></Style>
 
   <!-- ─────────────────────────────────────────────
        P01 — Línea Petare / Ruta 25

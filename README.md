@@ -64,6 +64,22 @@ Las 15 estaciones con coordenadas `[OSM]` están documentadas en [`docs/SOURCES.
 
 ---
 
+## Herramientas de desarrollo
+
+El proyecto incluye scripts de validación y generación automática de estilos:
+
+```bash
+npm run lint              # Validar todos los archivos KML
+npm run generate-styles   # Verificar que los estilos coinciden con config/styles.yaml
+npm run build             # Generar estilos + validar
+```
+
+Instalación: `npm install`
+
+La configuración central de estilos está en [`config/styles.yaml`](config/styles.yaml).
+
+---
+
 ## Contribuir
 
 1. Abre un **Issue** describiendo el problema y la fuente que lo respalda

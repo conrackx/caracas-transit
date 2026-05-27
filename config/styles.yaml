@@ -122,8 +122,8 @@ tc:
 
 p01:
   name: "Línea Petare (Ruta 25)"
-  color_hex: "#FF7400"
-  color_kml: "FF0074FF"
+  color_hex: "#D35400"
+  color_kml: "FF0054D3"
   width_line: 3
   icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
   files: ["lineas_privadas.kml"]
@@ -156,6 +156,94 @@ p08:
   name: "Línea Casalta"
   color_hex: "#0066FF"
   color_kml: "FFFF6600"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p03:
+  name: "Línea Las Minas - Baruta"
+  color_hex: "#1ABC9C"
+  color_kml: "FF9CBC1A"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p05:
+  name: "Línea Catia (La Cota 905)"
+  color_hex: "#E74C3C"
+  color_kml: "FF3C4CE7"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p07:
+  name: "Línea Antímano - Zoológico"
+  color_hex: "#3498DB"
+  color_kml: "FFDB9834"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p09:
+  name: "Línea San Agustín"
+  color_hex: "#9B59B6"
+  color_kml: "FFB6599B"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p10:
+  name: "Línea La Pastora - Macaracuay"
+  color_hex: "#F1C40F"
+  color_kml: "FF0FC4F1"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p11:
+  name: "Línea El Paraíso - La India"
+  color_hex: "#2ECC71"
+  color_kml: "FF71CC2E"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p12:
+  name: "Línea Sabana de Blanco"
+  color_hex: "#34495E"
+  color_kml: "FF5E4934"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p13:
+  name: "Línea Carabobo-Tiuna"
+  color_hex: "#E67E22"
+  color_kml: "FF227EE6"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p14:
+  name: "Línea Chacao-PV"
+  color_hex: "#1A5276"
+  color_kml: "FF76521A"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p15:
+  name: "Línea Fuerte Tiuna - La Bandera"
+  color_hex: "#7D3C98"
+  color_kml: "FF983C7D"
+  width_line: 3
+  icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
+  files: ["lineas_privadas.kml"]
+
+p16:
+  name: "Línea Cotiza - Centro"
+  color_hex: "#A93226"
+  color_kml: "FF2632A9"
   width_line: 3
   icon: "http://maps.google.com/mapfiles/kml/shapes/bus.png"
   files: ["lineas_privadas.kml"]

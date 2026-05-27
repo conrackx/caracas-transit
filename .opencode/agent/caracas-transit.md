@@ -63,11 +63,22 @@ MB-A | Colinas de Bello Monte [Origen]
 | BusCaracas L7 | `#CC2222` | `FF2222CC` | 4 |
 | Metrobús | `#CC6600` | `FF0066CC` | 3 |
 | TransChacao | `#008080` | `FF808000` | 3 |
-| Líneas privadas P01 | `#FF7400` | `FF0074FF` | 3 |
+| Líneas privadas P01 | `#D35400` | `FF0054D3` | 3 |
 | Líneas privadas P02 | `#FF2200` | `FF0022FF` | 3 |
+| Líneas privadas P03 | `#1ABC9C` | `FF9CBC1A` | 3 |
 | Líneas privadas P04 | `#00AAFF` | `FFFFAA00` | 3 |
+| Líneas privadas P05 | `#E74C3C` | `FF3C4CE7` | 3 |
 | Líneas privadas P06 | `#9900CC` | `FFCC0099` | 3 |
+| Líneas privadas P07 | `#3498DB` | `FFDB9834` | 3 |
 | Líneas privadas P08 | `#0066FF` | `FFFF6600` | 3 |
+| Líneas privadas P09 | `#9B59B6` | `FFB6599B` | 3 |
+| Líneas privadas P10 | `#F1C40F` | `FF0FC4F1` | 3 |
+| Líneas privadas P11 | `#2ECC71` | `FF71CC2E` | 3 |
+| Líneas privadas P12 | `#34495E` | `FF5E4934` | 3 |
+| Líneas privadas P13 | `#E67E22` | `FF227EE6` | 3 |
+| Líneas privadas P14 | `#1A5276` | `FF76521A` | 3 |
+| Líneas privadas P15 | `#7D3C98` | `FF983C7D` | 3 |
+| Líneas privadas P16 | `#A93226` | `FF2632A9` | 3 |
 
 ### 4. Iconos estándar
 
@@ -96,11 +107,16 @@ Patrón: `{sistema}_{variante}`
 - `l1_stop` = L1 ícono estación regular
 - `l1_xfer` = L1 ícono transbordo
 - `l2_line` = L2 línea
-- `cable_line`, `cable_stop` = Metrocable
-- `ct_line`, `ct_stop` = Cabletrén
-- `brt_line`, `brt_stop` = BusCaracas
-- `teques_line`, `teques_stop` = Metro Los Teques
-- `ffe_line`, `ffe_stop` = Ferrocarril
+- `l2_term` = L2 ícono terminal
+- `l2_stop` = L2 ícono estación regular
+- `l2_xfer` = L2 ícono transbordo
+- `l3_line`, `l3_term`, `l3_stop`, `l3_xfer` = L3
+- `l4_line`, `l4_term`, `l4_stop`, `l4_xfer` = L4
+- `cable_line`, `cable_stop`, `cable_term` = Metrocable
+- `ct_line`, `ct_stop`, `ct_term` = Cabletrén
+- `brt_line`, `brt_stop`, `brt_term` = BusCaracas
+- `teques_line`, `teques_stop`, `teques_term` = Metro Los Teques
+- `ffe_line`, `ffe_stop`, `ffe_term` = Ferrocarril
 - `mb_term` = Metrobús
 - `tc_term` = TransChacao
 - `p01_line`, `p02_line`, etc. = Líneas privadas
