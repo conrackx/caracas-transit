@@ -1,6 +1,7 @@
-ï»¿# AGENTS.md â€” caracas-transit
+<!-- workspace-version: 1.1.0 -->
+# AGENTS.md — caracas-transit
 
-> **Herencia:** Este proyecto hereda los [EstÃ¡ndares de IngenierÃ­a Globales](..\workspace/AGENTS.md#est%C3%A1ndares-de-ingenier%C3%ADa-globales-heredables) del workspace raÃ­z. Las reglas definidas aqu%iacute; **sobrescriben o extienden** los est%aacute;ndares globales.
+> **Herencia:** Este proyecto hereda los [Estándares de Ingeniería Globales](..\workspace/AGENTS.md#est%C3%A1ndares-de-ingenier%C3%ADa-globales-heredables) del workspace raíz. Las reglas definidas aqu%iacute; **sobrescriben o extienden** los est%aacute;ndares globales.
 
 ## Workflow /cerrar-sesion`n
 Desde este directorio:
@@ -12,5 +13,6 @@ cd ..\workspace && opencode run cerrar-sesion
 El comando detecta actividad en cwd actual y genera log en work_log/ ra%iacute;z.
 
 ## Convenciones Propias
-*Por definir - agregar segÃºn necesidad del proyecto*
+*Por definir - agregar según necesidad del proyecto*
+
 
